@@ -24,7 +24,7 @@ export default class App extends React.Component {
           <Switch>
             <Route exact path="/" component={SignIn} />
             <Route exact path="/signup" component={SignUp} />
-            <Route exact path="/concert" component={ConcertList} />
+            <Route exact path="/concerts" component={ConcertList} />
             <Route exact path="/concert/:id" component={Detail} />
             {/* <Route exact path="/:about-me/about" component={AboutMe} /> */}
           </Switch>
