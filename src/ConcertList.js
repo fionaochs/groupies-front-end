@@ -38,7 +38,7 @@ export default class ConcertList extends Component {
                 { this.state.concerts.length &&
                 <ul>
                     {
-                        this.state.concerts.map(concert => <Link to={`concert/${concert.name}`} key={concert.name}><ConcertData data={concert} />
+                        this.state.concerts.map(concert => <Link to={`concert/${concert.name}`} key={concert.name}><ConcertData concert={concert} />
                         </Link>)
                     }
                 </ul>

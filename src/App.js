@@ -22,7 +22,7 @@ export default class App extends React.Component {
           <Link to="/about-me/about">about us</Link>
           <Switch>
             <Route exact path="/:concert?" component={ConcertList} />
-            <Route exact path="/pokemon/:concertId" component={Detail} />
+            <Route exact path="/concert/:id" component={Detail} />
             {/* <Route exact path="/:about-me/about" component={AboutMe} /> */}
           </Switch>
         </div>
