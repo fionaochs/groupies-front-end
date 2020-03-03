@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { GetConcert } from './api'
+import { getConcerts } from './api'
 import ConcertData from './ConcertData';
 export default class Detail extends Component {
     state = { concert: {} }
     async componentDidMount() {
-        const data = await GetConcert(this.props.match.params.concertId);
+        const data = await getConcerts(this.props.match.params.concertId);
         if (data.body.results)
         {this.setState({ concert: data.body.results[0] })}
     }
