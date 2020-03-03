@@ -1,5 +1,6 @@
 {
   "name": "groupies-front-end",
+<<<<<<< HEAD
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -16,4 +17,39 @@
     "url": "https://github.com/fionaochs/groupies-front-end/issues"
   },
   "homepage": "https://github.com/fionaochs/groupies-front-end#readme"
+=======
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.1",
+    "@testing-library/user-event": "^7.2.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.0",
+    "superagent": "^5.2.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+>>>>>>> f8db872bea8477f2e9ce09bae6e486d385cddcb0
 }
