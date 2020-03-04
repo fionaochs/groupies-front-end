@@ -66,3 +66,45 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+
+********************** SEARCHBARD.JS *********************************
+
+
+import React, { Component } from 'react'
+import request from 'superagent'
+import ConcertList from './ConcertList.js';
+
+export default class Search extends Component {
+    state = {
+        concerts: [],
+        saved: [],
+        input: ''
+    }
+    async componentDidMount() {
+        const savedData = await request.get('https://radiant-river-59929.herokuapp.com/api/me/saved')
+            .set('Authorization', this.props.user.token);
+        this.setState({ saved: savedData.body });
+    }
+    handleSearch = async (e) => {
+        e.preventDefault();
+        this.setState({
+        })
+        const savedData = await request.get(`https://radiant-river-59929.herokuapp.com/api/concerts?concert=${this.state.input}`);
+        this.setState({ 
+            concerts: savedData.body,
+        })
+    }
+    render() {
+        return (
+            <div id="search">
+                <form onSubmit= { this.handleSearch }>
+                <input value={this.state.input} onChange={(e) => this.setState({ input: e.target.value })} />
+                <button onClick={this.handleSearch}>Search</button>
+                <ConcertList concert={this.state.concert} user={ this.props.user }/>
+                </form>
+            </div>
+        )
+    }
+}
