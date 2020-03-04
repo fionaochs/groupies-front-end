@@ -1,23 +1,5 @@
 {
   "name": "groupies-front-end",
-<<<<<<< HEAD
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fionaochs/groupies-front-end.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/fionaochs/groupies-front-end/issues"
-  },
-  "homepage": "https://github.com/fionaochs/groupies-front-end#readme"
-=======
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -51,5 +33,4 @@
       "last 1 safari version"
     ]
   }
->>>>>>> f8db872bea8477f2e9ce09bae6e486d385cddcb0
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { getConcert } from './api'
-import ConcertData from './ConcertData';
+// import ConcertData from './ConcertData';
 
 
 export default class Detail extends Component {
