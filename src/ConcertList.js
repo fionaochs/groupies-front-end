@@ -89,7 +89,7 @@ export default class ConcertList extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="list-container">
                 <header>
                     <SearchBar
                     searchQuery={this.state.searchQuery}
