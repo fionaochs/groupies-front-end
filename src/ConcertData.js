@@ -16,8 +16,8 @@ export default class ConcertData extends Component {
                 {/* <h3>Maximum Price: {this.props.concert.priceRanges[0].max}</h3> */}
                 <h3>Venue: {this.props.concert._embedded.venues[0].name}</h3>
                 </Link>
-                <button className={this.props.saved.findIndex(el => el.tm_id === this.props.concert.id) !== -1 ? 'saved' : ''} 
-                    onClick={ () => {this.props.handleSaved(this.props.concert, this.props.saved.findIndex(el => el.tm_id === this.props.concert.id))}}>♫</button>
+                <span className={this.props.saved.findIndex(el => el.tm_id === this.props.concert.id) !== -1 ? 'saved' : ''} 
+                    onClick={ (e) => {this.props.handleSaved(this.props.concert, this.props.saved.findIndex(el => el.tm_id === this.props.concert.id), e)}}>♫<div></div><div></div><div></div><div></div></span>
             </li>
         )
     }
