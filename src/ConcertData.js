@@ -2,9 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 export default class ConcertData extends Component {
     render() {
-        console.log('props', this.props.concert)
         return (
-            <li id="concert-list">
+            <li className="concert-list">
                 <Link  to={`concert/${this.props.concert.id}`} key={this.props.concert.id}>
                 <h1>{this.props.concert.name}</h1>
                 <img src={this.props.concert.images[0].url} style={{width: "125px", height:"100px"}} alt="" id="concert-images"/>
@@ -17,7 +16,8 @@ export default class ConcertData extends Component {
                 {/* <h3>Maximum Price: {this.props.concert.priceRanges[0].max}</h3> */}
                 <h3>Venue: {this.props.concert._embedded.venues[0].name}</h3>
                 </Link>
-                <button onClick={ () => {this.props.handleSaved(this.props.concert) }}>Save!</button>
+                <button className={this.props.saved.findIndex(el => el.tm_id === this.props.concert.id) !== -1 ? 'saved' : ''} 
+                    onClick={ () => {this.props.handleSaved(this.props.concert, this.props.saved.findIndex(el => el.tm_id === this.props.concert.id))}}>♫</button>
             </li>
         )
     }
