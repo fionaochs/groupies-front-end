@@ -10,7 +10,7 @@ export default class HomePage extends Component {
     render() {
         
         return (
-            <div className="container">
+            <div className="homepage-container">
                 <div className="logo">
                     <h1>Groupies</h1>
                     <br />
