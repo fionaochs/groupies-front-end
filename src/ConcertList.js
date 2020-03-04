@@ -51,7 +51,9 @@ export default class ConcertList extends Component {
 
     handleCity = (e) => this.setState({ searchCity: e.target.value })
 
-    handleSaved = async(concert) => {
+    handleSaved = async(concert, saved_id) => {
+        console.log(saved_id);
+        try {
         const saved = {
             tm_id: concert.id,
             name: concert.name,
@@ -67,19 +69,25 @@ export default class ConcertList extends Component {
             lat: concert._embedded.venues[0].location.latitude ? concert._embedded.venues[0].location.latitude : null,
         }
         if (isLoggedIn()) {
-        const savedConcert = await addSaved(saved);
-        console.log(savedConcert);
-        const data = await getSaved(); if(data.body) {
-            this.setState({
+
+            const savedConcert = saved_id === -1 
+                ? await addSaved(saved)
+                : await deleteSaved(this.state.saved[saved_id].id);
+
+            console.log(savedConcert);
+            const data = await getSaved(); if(data.body) {
+                this.setState({
                     saved: data.body,
                 })
             } else {
                 this.setState({ saved: [] })
             }
         }
+    } catch {
+
+    }
     }
     render() {
-        console.log(this.state.concerts.length)
         return (
             <div>
                 <header>
@@ -95,7 +103,7 @@ export default class ConcertList extends Component {
                 <ul>
                     {
                         this.state.concerts.map(concert =>
-                        <ConcertData handleSaved={ this.handleSaved } concert={concert} />
+                        <ConcertData saved={ this.state.saved } handleSaved={ this.handleSaved } concert={concert} />
                         )
                     }
                 </ul>
