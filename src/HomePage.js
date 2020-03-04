@@ -19,7 +19,6 @@ export default class HomePage extends Component {
 
                 {this.state.isSignUp ? <SignUp /> : <SignIn/>}
 
-                {/* {this.state.isSignUp ? } */}
                 <button type="button" className={this.state.isSignUp ? 'hidden' : ''}
                 onClick={ () => { this.setState({isSignUp: true}) }}>Sign Up</button>
             </div>
