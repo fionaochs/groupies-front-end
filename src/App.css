@@ -27,15 +27,15 @@ li {
   /* width: 30%; */
 }
 
-#concert-images {
+.concert-images {
   height: 200px;
   width: 200px;
 }
 
-#concert-list {
+/* #concert-list {
   height: 675px;
   width: 300px;
-}
+} */
 
 #header-image {
   height: 275px;
