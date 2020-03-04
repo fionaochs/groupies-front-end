@@ -1,0 +1,25 @@
+ul#concert-list {
+    display: grid;
+    grid-template-columns: 380px 380px;
+    padding-left: 0px;
+    width: 760px;
+    margin: 0 auto;
+}
+
+#concert-list-container {
+    margin: 0 auto;
+    text-align: center;
+    background-color: #D6D3F0;
+}
+
+#concert-list a {
+    text-decoration: none;
+}
+
+#concert-list li {
+    background-color: #C6B9CD;
+}
+
+#concert-list h2 {
+    color: #0F5257;
+}
