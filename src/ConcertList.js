@@ -4,9 +4,10 @@ import SearchBar from './SearchBar.js';
 import { getConcerts, getSaved, addSaved, deleteSaved } from './api.js';
 // import { SignUpModal } from './SignUpModal.js' 
 import './loading.css';
-import './ConcertList.css';
+import './concertlist.css';
+import Header from './Header.js'
 
-// export const isLoggedIn = () => JSON.parse(localStorage.getItem('user')); 
+const isLoggedIn = () => JSON.parse(localStorage.getItem('user')); 
 
 export default class ConcertList extends Component {
     state = {
@@ -104,7 +105,7 @@ export default class ConcertList extends Component {
     render() {
         return (
             <div id="concert-list-container">
-                <div>
+                <header>
                     <SearchBar
                     searchQuery={this.state.searchQuery}
                     handleSearch={this.handleSearch}
@@ -114,7 +115,6 @@ export default class ConcertList extends Component {
                     />
                 </header>
                 {/* {this.state.userNotLoggedIn && <SignUpModal />} */}
-                </div>
                 { this.state.concerts.length &&
                 <ul id='concert-list'>
                     {
