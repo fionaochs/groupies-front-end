@@ -25,7 +25,14 @@ h2{
     padding: 10px;
 }
 .member-photo {
-    height: 175px;
+    
     border-radius: 100%;
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: -11em;
+    z-index: 999;
+    border: 1rem solid #ebeef8; 
 } 
 
