@@ -3,7 +3,7 @@ import ConcertData from "./ConcertData.js";
 import SearchBar from './SearchBar.js';
 import { getConcerts, getSaved, addSaved, deleteSaved } from './api.js';
 import './loading.css';
-import './concertlist.css';
+import './ConcertList.css';
 
 const isLoggedIn = () => JSON.parse(localStorage.getItem('user'));
 

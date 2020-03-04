@@ -1,5 +1,4 @@
-ul#concert-list {
+ul.concert-list {
     display: grid;
     grid-template-columns: auto auto;
 }
-
