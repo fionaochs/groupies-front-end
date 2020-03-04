@@ -4,8 +4,9 @@ import request from 'superagent';
 import SearchBar from './SearchBar.js';
 import { Link } from 'react-router-dom';
 import { getConcerts, getSaved, addSaved, deleteSaved } from './api.js';
+// import { SignUpModal } from './SignUpModal.js' 
 
-const isLoggedIn = () => JSON.parse(localStorage.getItem('user'));
+// export const isLoggedIn = () => JSON.parse(localStorage.getItem('user')); 
 
 export default class ConcertList extends Component {
     state = {
@@ -13,6 +14,7 @@ export default class ConcertList extends Component {
         searchCity: '',
         concerts: [],
         saved: []
+        // userNotLoggedIn: false 
     }
     async componentDidMount() {
             const data = await getConcerts();
@@ -28,11 +30,14 @@ export default class ConcertList extends Component {
             if(data.body) {
                 this.setState({
                         saved: data.body,
-                    })
+                    } )
                 } else {
                     this.setState({ saved: [] })
                 }
-            }
+            } 
+            // else {
+            //     this.setState({userNotLoggedIn: true})
+            // }
     }
     handleSearch = async (e) => {
         e.preventDefault();
@@ -99,6 +104,7 @@ export default class ConcertList extends Component {
                     searchCity={this.state.searchCity}
                     />
                 </header>
+                {/* {this.state.userNotLoggedIn && <SignUpModal />} */}
                 { this.state.concerts.length &&
                 <ul>
                     {
