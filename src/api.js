@@ -25,6 +25,6 @@ export const deleteSaved = async(id) => {
     return data;
 }
 
-export const getConcerts = () => request.get(`https://vast-ravine-67223.herokuapp.com/api/concerts`);
+export const getConcerts = (keyword = '', city = '') => request.get(`https://vast-ravine-67223.herokuapp.com/api/concerts?city=${city}&keyword=${keyword}`);
 
 export const getConcert = (id) => request.get(`https://vast-ravine-67223.herokuapp.com/api/concerts/${id}`);

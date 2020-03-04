@@ -7,7 +7,8 @@ import { getConcerts } from './api.js';
 
 export default class ConcertList extends Component {
     state = {
-        searchQuery: this.props.match.params.name,
+        searchQuery: '',
+        searchCity: '',
         concerts: [],
     }
     async componentDidMount() {
@@ -17,13 +18,19 @@ export default class ConcertList extends Component {
     }
     handleSearch = async (e) => {
         e.preventDefault();
-        const data = await request.get(`https://vast-ravine-67223.herokuapp.com/${this.state.searchQuery}`)
+        const data = await getConcerts(this.state.searchQuery, this.state.searchCity);
+        console.log(data);
+        if(data.body._embedded) {
         this.setState({
-            concerts: data.body.results,
-        })
-        this.props.history.push(this.state.searchQuery)
+                concerts: JSON.parse(data.text)._embedded.events,
+            })
+        } else {
+            this.setState({ concerts: [] })
+        }
+        // this.props.history.push(this.state.searchQuery)
     }
     handleChange = (e) => this.setState({ searchQuery: e.target.value })
+    handleCity = (e) => this.setState({ searchCity: e.target.value })
     render() {
         console.log(this.state.concerts.length)
         return (
@@ -33,6 +40,8 @@ export default class ConcertList extends Component {
                     searchQuery={this.state.searchQuery}
                     handleSearch={this.handleSearch}
                     handleChange={this.handleChange}
+                    handleCity={this.handleCity}
+                    searchCity={this.state.searchCity}
                     />
                 </header>
                 { this.state.concerts.length &&
