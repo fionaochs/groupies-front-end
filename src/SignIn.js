@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import request from 'superagent'
 // import { Link } from 'react-router-dom'
 
+import './SignIn.css'
+
 export default class SignIn extends Component {
 
     state = {
@@ -28,9 +30,12 @@ export default class SignIn extends Component {
         return (    
             <div className="signin-container">
                 <form className="signin-form" onSubmit={this.handleSignIn}>
-                    <input value={ this.state.usernameSignIn} onChange={(e) => this.setState({ usernameSignIn: e.target.value})} />
-                    <input value={ this.state.passwordSignIn} onChange={(e) => this.setState({ passwordSignIn: e.target.value})} />
-                    <button>Sign in</button>   
+                    <input value={ this.state.usernameSignIn} onChange={(e) => this.setState({ usernameSignIn: e.target.value})} placeholder="Username"/>
+                    <br/>
+                    <input value={ this.state.passwordSignIn} onChange={(e) => this.setState({ passwordSignIn: e.target.value})} placeholder="Password"/>
+                    <br/>
+                    <button>Sign Up?</button>   
+                    <button>Sign In</button> 
                 </form>    
             </div>
         )

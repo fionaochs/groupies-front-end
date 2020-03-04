@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
+.container {
+    height: 100vh;
+    width: 100vw;        
+    align-items: center;
+    }
 h1{
-font-family: 'spartan';  
-color: azure;
+    font-family: 'spartan';  
+    color: white;
+    font-size: 45px;
 }
 html, body{
     width: 100%;
@@ -15,16 +21,16 @@ html, body{
     margin: 0;
     padding: 0;
     /* background: red; */
-    border: 2px solid teal;
+    border: 2px solid #0F5257;
 }
 #groupies{
     
     font-size: 35px;
 }
 body{
-    background-color: rgb(106, 184, 184);
+    background-color: #0F5257;
 }
 button{
-    color: azure;
-    background-color: rgb(106, 184, 184);
+    color: white;
+    background-color: #0F5257;
 }
