@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export default class ConcertData extends Component {
     render() {
-        console.log('props', this.props.concert)
+        // console.log('props', this.props.concert)
         return (
             <li id="concert-list">
                 <h1>{this.props.concert.name}</h1>
