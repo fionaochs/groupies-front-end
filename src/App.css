@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet');
+
 body {
   background-color: #C6B9CD;
   padding: 5px;
-  font-family: Arial;
+  font-family: 'Spartan', sans-serif;
   text-align: center;
+  
 }
 
 ul {
