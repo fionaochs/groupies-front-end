@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import SignIn from './SignIn.js'
-// import './SignIn.css'
 import './HomePage.css'
 
 export default class HomePage extends Component {
