@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
+#App{
+  height: 100%;
+}
 body {
-  background-color: #C6B9CD;
+  background-color: white;
   padding: 5px;
-  font-family: Arial;
+  font-family: 'spartan';  
   text-align: center;
 }
 
@@ -17,7 +21,7 @@ ul {
 li {
   border: 4px solid #0B3140;
   float: left;
-  background-color: #D6D3F0;
+  background-color: white;
   width: 30%;
 
 }
