@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet');
+
 body {
-  background-color: #eee;
+  background-color: #C6B9CD;
   padding: 5px;
-  font-family: Arial;
+  font-family: 'Spartan', sans-serif;
   text-align: center;
+  
 }
 
 ul {
@@ -10,12 +13,16 @@ ul {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
 }
 
 li {
-  border: 4px solid black;
+  border: 4px solid #0B3140;
   float: left;
-  background-color: white;
+  background-color: #D6D3F0;
+  width: 30%;
+
 }
 
 #concert-images {
@@ -33,9 +40,11 @@ li {
 }
 .concert-list button{
   font-size: 20px;
-  color: #ccc;
+  color: #0F5257;
+  background-color: white;
+  border-radius: 15%;
 }
 .concert-list button.saved{
   font-size: 20px;
-  color: black;
+  color: #0F5257;
 }
