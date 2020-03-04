@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import ConcertData from "./ConcertData.js";
 import SearchBar from './SearchBar.js';
 import { getConcerts, getSaved, addSaved, deleteSaved } from './api.js';
+// import { SignUpModal } from './SignUpModal.js' 
 import './loading.css';
 import './ConcertList.css';
 
-const isLoggedIn = () => JSON.parse(localStorage.getItem('user'));
+// export const isLoggedIn = () => JSON.parse(localStorage.getItem('user')); 
 
 export default class ConcertList extends Component {
     state = {
@@ -13,6 +14,7 @@ export default class ConcertList extends Component {
         searchCity: '',
         concerts: [],
         saved: [],
+        // userNotLoggedIn: false 
         loadingFav: false,
         loadingSearch: false
     }
@@ -30,11 +32,14 @@ export default class ConcertList extends Component {
             if(data.body) {
                 this.setState({
                         saved: data.body,
-                    })
+                    } )
                 } else {
                     this.setState({ saved: [] })
                 }
-            }
+            } 
+            // else {
+            //     this.setState({userNotLoggedIn: true})
+            // }
     }
     handleSearch = async (e) => {
         e.preventDefault();
@@ -107,6 +112,8 @@ export default class ConcertList extends Component {
                     handleCity={this.handleCity}
                     searchCity={this.state.searchCity}
                     />
+                </header>
+                {/* {this.state.userNotLoggedIn && <SignUpModal />} */}
                 </div>
                 { this.state.concerts.length &&
                 <ul id='concert-list'>
