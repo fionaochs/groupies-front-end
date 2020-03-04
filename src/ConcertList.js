@@ -3,29 +3,91 @@ import ConcertData from "./ConcertData.js";
 import request from 'superagent';
 import SearchBar from './SearchBar.js';
 import { Link } from 'react-router-dom';
-import { getConcerts } from './api.js';
+import { getConcerts, getSaved, addSaved, deleteSaved } from './api.js';
+
+const isLoggedIn = () => JSON.parse(localStorage.getItem('user'));
 
 export default class ConcertList extends Component {
     state = {
-        searchQuery: this.props.match.params.name,
+        searchQuery: '',
+        searchCity: '',
         concerts: [],
+        saved: []
     }
     async componentDidMount() {
             const data = await getConcerts();
-            console.log('data', JSON.parse(data.text)._embedded.events);
-            this.setState({ concerts: JSON.parse(data.text)._embedded.events })
+            if(data.body._embedded) {
+                this.setState({
+                        concerts: JSON.parse(data.text)._embedded.events,
+                    })
+                } else {
+                    this.setState({ concerts: [] })
+                }
+            if (isLoggedIn()) {
+                const data = await getSaved();
+            if(data.body) {
+                this.setState({
+                        saved: data.body,
+                    })
+                } else {
+                    this.setState({ saved: [] })
+                }
+            }
     }
     handleSearch = async (e) => {
         e.preventDefault();
-        const data = await request.get(`https://vast-ravine-67223.herokuapp.com/${this.state.searchQuery}`)
+        const data = await getConcerts(this.state.searchQuery, this.state.searchCity);
+        console.log(data);
+        if(data.body._embedded) {
         this.setState({
-            concerts: data.body.results,
-        })
-        this.props.history.push(this.state.searchQuery)
+                concerts: JSON.parse(data.text)._embedded.events,
+            })
+        } else {
+            this.setState({ concerts: [] })
+        }
+        // this.props.history.push(this.state.searchQuery)
     }
     handleChange = (e) => this.setState({ searchQuery: e.target.value })
+
+    handleCity = (e) => this.setState({ searchCity: e.target.value })
+
+    handleSaved = async(concert, saved_id) => {
+        console.log(saved_id);
+        try {
+        const saved = {
+            tm_id: concert.id,
+            name: concert.name,
+            images: concert.images[1].url,
+            genre: concert.classifications[0].genre.name,
+            start_date: concert.dates.start.localDate,
+            tickets_url: concert.url,
+            city: concert._embedded.venues[0].city.name,
+            state: concert._embedded.venues[0].state.name,
+            price_min: concert.priceRanges[0].min ? concert.priceRanges[0].min : null,
+            price_max: concert.priceRanges[0].max ? concert.priceRanges[0].max : null,
+            long: concert._embedded.venues[0].location.longitude ? concert._embedded.venues[0].location.longitude : null,
+            lat: concert._embedded.venues[0].location.latitude ? concert._embedded.venues[0].location.latitude : null,
+        }
+        if (isLoggedIn()) {
+
+            const savedConcert = saved_id === -1 
+                ? await addSaved(saved)
+                : await deleteSaved(this.state.saved[saved_id].id);
+
+            console.log(savedConcert);
+            const data = await getSaved(); if(data.body) {
+                this.setState({
+                    saved: data.body,
+                })
+            } else {
+                this.setState({ saved: [] })
+            }
+        }
+    } catch {
+
+    }
+    }
     render() {
-        console.log(this.state.concerts.length)
         return (
             <div>
                 <header>
@@ -33,13 +95,16 @@ export default class ConcertList extends Component {
                     searchQuery={this.state.searchQuery}
                     handleSearch={this.handleSearch}
                     handleChange={this.handleChange}
+                    handleCity={this.handleCity}
+                    searchCity={this.state.searchCity}
                     />
                 </header>
                 { this.state.concerts.length &&
                 <ul>
                     {
-                        this.state.concerts.map(concert => <Link to={`concert/${concert.id}`} key={concert.id}><ConcertData concert={concert} />
-                        </Link>)
+                        this.state.concerts.map(concert =>
+                        <ConcertData saved={ this.state.saved } handleSaved={ this.handleSaved } concert={concert} />
+                        )
                     }
                 </ul>
                 }

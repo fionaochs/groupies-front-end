@@ -7,6 +7,7 @@ export default class Saved extends Component {
     state = {
         saved: []
     }
+    
     async componentDidMount() {
 
         const data = await getSaved();
