@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { getConcert } from './api'
+import './detail.css';
 // import ConcertData from './ConcertData';
 
 

@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
+
 h1{
 font-family: 'spartan';  
-color: #0F5257;
+color: white;
 }
 html, body{
     width: 100%;
@@ -10,17 +11,18 @@ html, body{
 #header{
     position: fixed;
     width: 100%;
+    height: 11%;
     background-color: #0F5257;
     top: 0;
     left: 0;
     margin: 0;
-    padding: 0;
+    padding: 10px;
     font-size: 35px;
     border: solid 2px #0F5257;
 }
 
 body{
-    background-color: #0F5257;
+    background-color: white;
 }
 button{
     color: #0F5257;
