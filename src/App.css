@@ -41,6 +41,8 @@ li {
 .concert-list button{
   font-size: 20px;
   color: #0F5257;
+  background-color: white;
+  border-radius: 15%;
 }
 .concert-list button.saved{
   font-size: 20px;
