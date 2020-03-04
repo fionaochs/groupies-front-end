@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import request from 'superagent'
 // import { Link } from 'react-router-dom'
 
-export default class LogIn extends Component {
+export default class SignIn extends Component {
 
     state = {
         usernameSignIn: '',
@@ -23,18 +23,16 @@ export default class LogIn extends Component {
         this.props.history.push('/');
     }
 
-  
+
     render() {
         return (    
-            <div>
-              
-                {/* <Link /> */}
-
-                <input value={ this.state.usernameSignIn} onChange={(e) => this.setState({ usernameSignIn: e.target.value})} />
-                <input value={ this.state.passwordSignIn} onChange={(e) => this.setState({ passwordSignIn: e.target.value})} />
-
-                <button onClick={this.handleSignIn}>Sign in</button>       
-                </div>
+            <div className="signin-container">
+                <form className="signin-form" onSubmit={this.handleSignIn}>
+                    <input value={ this.state.usernameSignIn} onChange={(e) => this.setState({ usernameSignIn: e.target.value})} />
+                    <input value={ this.state.passwordSignIn} onChange={(e) => this.setState({ passwordSignIn: e.target.value})} />
+                    <button>Sign in</button>   
+                </form>    
+            </div>
         )
     }
 }
