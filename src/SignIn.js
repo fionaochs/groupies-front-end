@@ -31,10 +31,10 @@ export default class SignIn extends Component {
         return (    
             <div className="signin-container">
                 <form className="signin-form" onSubmit={this.handleSignIn}>
-                    <input value={ this.state.usernameSignIn} onChange={(e) => this.setState({ usernameSignIn: e.target.value})} placeholder="Username"/>
+                    <input type="text" value={ this.state.usernameSignIn} onChange={(e) => this.setState({ usernameSignIn: e.target.value})} placeholder="Email"/>
                     <br/>
-                    <input value={ this.state.passwordSignIn} onChange={(e) => this.setState({ passwordSignIn: e.target.value})} placeholder="Password"/>
-                    { this.state.isSignUp && <div>sign up</div>}
+                    <input type="password" value={ this.state.passwordSignIn} onChange={(e) => this.setState({ passwordSignIn: e.target.value})} placeholder="Password"/>
+                    {/* { this.state.isSignUp && <div>Si</div>} */}
                     <br/>   
                     <button type="submit">Sign In</button> 
                 </form>    

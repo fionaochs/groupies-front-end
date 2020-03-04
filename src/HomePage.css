@@ -5,7 +5,7 @@
     align-items: center;
 }
 
-#homepage-container h1 {
+.homepage-container h1 {
     font-family: 'spartan';  
     color: white;
     font-size: 65px;
@@ -31,11 +31,11 @@ html, body {
     font-size: 35px;
 }
 
-#homepage-container body {
+.homepage-container body {
     background-color: #0F5257;
 }
 
-#homepage-container button {
+.homepage-container button {
     color: white;
     background-color: #0F5257;
     border-radius: 25px;

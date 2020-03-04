@@ -13,7 +13,8 @@ export default class LogIn extends Component {
             
     }
 
-    handleSignUp = async () => {
+    handleSignUp = async (e) => {
+        e.preventDefault();
 
         const signUp = await request.post(`https://vast-ravine-67223.herokuapp.com/api/auth/signup`, {
 
@@ -32,13 +33,13 @@ export default class LogIn extends Component {
         return (
             <div className="signup-container">
                 <form className="signup-form">
-                    <input value={ this.state.username} onChange={(e) => this.setState({ username: e.target.value})} placeholder="Username"/>
+                    <input type="text" value={ this.state.username} onChange={(e) => this.setState({ username: e.target.value})} placeholder="Username"/>
                     <br />
-                    <input value={ this.state.email} onChange={(e) => this.setState({ email: e.target.value})} placeholder="Email"/>
+                    <input type="email" value={ this.state.email} onChange={(e) => this.setState({ email: e.target.value})} placeholder="Email"/>
                     <br />
-                    <input value={ this.state.password} onChange={(e) => this.setState({ password: e.target.value})} placeholder="Password"/>
+                    <input type="password" value={ this.state.password} onChange={(e) => this.setState({ password: e.target.value})} placeholder="Password"/>
                     <br />
-                    <input value={ this.state.city} onChange={(e) => this.setState({ city: e.target.value})} placeholder="City"/>
+                    <input type="text" value={ this.state.city} onChange={(e) => this.setState({ city: e.target.value})} placeholder="City"/>
                     <br />
                     <button onClick={ this.handleSignUp }>Sign up</button>  
                     <br />
