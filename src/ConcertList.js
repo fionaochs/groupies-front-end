@@ -98,8 +98,8 @@ export default class ConcertList extends Component {
     }
     render() {
         return (
-            <div className="list-container">
-                <header>
+            <div id="concert-list-container">
+                <div>
                     <SearchBar
                     searchQuery={this.state.searchQuery}
                     handleSearch={this.handleSearch}
@@ -107,7 +107,7 @@ export default class ConcertList extends Component {
                     handleCity={this.handleCity}
                     searchCity={this.state.searchCity}
                     />
-                </header>
+                </div>
                 { this.state.concerts.length &&
                 <ul id='concert-list'>
                     {
