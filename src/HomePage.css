@@ -7,7 +7,7 @@
 h1{
     font-family: 'spartan';  
     color: white;
-    font-size: 45px;
+    font-size: 65px;
 }
 html, body{
     width: 100%;
@@ -20,7 +20,6 @@ html, body{
     left: 0;
     margin: 0;
     padding: 0;
-    /* background: red; */
     border: 2px solid #0F5257;
 }
 #groupies{
@@ -33,4 +32,9 @@ body{
 button{
     color: white;
     background-color: #0F5257;
+    border-radius: 25px;
+
+}
+.hidden{
+    visibility: hidden;
 }

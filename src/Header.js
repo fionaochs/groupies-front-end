@@ -3,7 +3,7 @@ import './Header.css'
 export default class Header extends Component {
     render() {
         return (
-            <div id="header">
+            <div className="header">
                 <header>Groupies</header>
             </div>
         )
