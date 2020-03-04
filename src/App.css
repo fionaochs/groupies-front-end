@@ -1,9 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet');
+
+@import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
 
 body {
-  background-color: #C6B9CD;
+  background-color: white;
   padding: 5px;
-  font-family: 'Spartan', sans-serif;
+
+  font-family: 'spartan';  
+
   text-align: center;
   
 }
@@ -22,7 +25,6 @@ li {
   /* float: left; */
   background-color: #D6D3F0;
   /* width: 30%; */
-
 }
 
 #concert-images {
