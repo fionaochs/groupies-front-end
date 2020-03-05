@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
 import { getConcert } from './api'
 import './detail.css';
+
+// import ConcertData from './ConcertData';
+import * as moment from 'moment';
+import Share from './Share';
+
 import { getSaved, addSaved, deleteSaved } from './api.js';
 import * as moment from 'moment';
 import Mapp from './Map.js'
 
 const isLoggedIn = () => JSON.parse(localStorage.getItem('user')); 
+
 
 
 export default class Detail extends Component {
@@ -18,6 +24,8 @@ export default class Detail extends Component {
         if (concerts.body)
         {this.setState({ concert: concerts.body })}
     }
+
+
 
     
 
@@ -66,6 +74,7 @@ export default class Detail extends Component {
 
 
 
+
     render() {
         
         const { concert } = this.state;
@@ -74,7 +83,20 @@ export default class Detail extends Component {
 
             <div className="detail-box">
             { this.state.concert.name &&
+
+
+
+            <div className="detail-box">
+            { this.state.concert.name &&
             <li className="detail-concert-list">
+
+                <h1 className="detail-h1">{this.state.concert.name}</h1>
+                <img src={this.state.concert.images[0].url} style={{width: "275px", height:"200px"}} alt="" id="concert-images"/>
+                <h3 className="detail-type">Genre:</h3><p className="detail-text"> {this.state.concert.classifications[0].genre.name}</p>        
+                <h3 className="detail-type">Date: {moment(this.state.concert.dates.start.localDate, 'YYYY-MM-DD').format('dddd, MMM Do, YYYY')}</h3>
+
+                <h3>Tickets: {this.state.concert.url}</h3>
+
                 <div className="detail-page-save-button">
                     <button onClick={e => this.handleSaved(null, e)}>save!</button>
                 </div>
@@ -91,6 +113,7 @@ export default class Detail extends Component {
 
                     <h3 className="location-detail">Location: {this.state.concert._embedded.venues[0].city.name}, {this.state.concert._embedded.venues[0].state.name}</h3>
 
+
                     <h3 className="detail-type">Venue: {this.state.concert._embedded.venues[0].name}</h3>
 
                 </div>
@@ -98,6 +121,14 @@ export default class Detail extends Component {
                 <h3 className="detail-type">Venue: {this.state.concert._embedded.venues[0].name}</h3>
 
                 <a href={this.state.concert.url}><button className="detail-ticket-button">Tickets</button></a>
+
+                <Share concert={this.state.concert}/>
+
+            </li>
+    }
+        </div>
+        </div>  
+
                 </div>
                 
             <button onClick={e => this.handleSaved(null, e)}>save!</button>
@@ -118,6 +149,7 @@ export default class Detail extends Component {
         
         };
         </div>
+
         );
     }
 }
