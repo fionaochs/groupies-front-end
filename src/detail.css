@@ -8,10 +8,32 @@
     height: 200px;
 }
 
+
+
+.detail-box-container {
+    width: 100%;
+    padding: 20px;
+}
+.detail-box {
+    width: 65%;
+    justify-content: center;
+    margin: 0 auto;
+    
+    
+}
+.detail-h1 {
+    color: #0B3142;
+}
+.detail-type {
+    
+}
+
 .detail-ticket-button {
     color: white;
-    background-color: 0F5257;
+    background-color: #0F5257;
     border-radius: 25px;
     font-size: 20px;
     padding: 2px 8px;
+    cursor: pointer;
+    margin: 0px 0px 20px 0px;
 }

@@ -50,8 +50,8 @@
     
 }
 #about-us-container {
-   display: flex;
-   justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 #concert-link:link {

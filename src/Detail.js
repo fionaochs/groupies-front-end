@@ -18,24 +18,33 @@ export default class Detail extends Component {
         console.log(this.state.concert.length)
         const { concert } = this.state;
         return (
-            <div>
+            <div className="detail-box-container">
+            <div className="detail-box">
             { this.state.concert.name &&
             <li className="detail-concert-list">
-                <h1>{this.state.concert.name}</h1>
+                <h1 className="detail-h1">{this.state.concert.name}</h1>
+
                 <img src={this.state.concert.images[0].url} style={{width: "275px", height:"200px"}} alt="" className="detail-concert-images"/>
-                <h3>Genre: {this.state.concert.classifications[0].genre.name}</h3>
-                <h3>Date: {this.state.concert.dates.start.localDate}</h3>
-                <a href={this.state.concert.url}><button className="detail-ticket-button">Tickets</button></a>
-                <h3>Tickets: {this.state.concert.url}</h3>
-                <h3>City: {this.state.concert._embedded.venues[0].city.name}</h3>
-                <h3>State: {this.state.concert._embedded.venues[0].state.name}</h3>
+
+                <h3 className="detail-type">Genre:</h3><p className="detail-text"> {this.state.concert.classifications[0].genre.name}</p>
+
+                <h3 className="detail-type">Date:</h3><p className="detail-text"> {this.state.concert.dates.start.localDate}</p>
+                
+                {/* <h3>Tickets: {this.state.concert.url}</h3> */}
+
+                <h3 className="detail-type">Location:</h3><p className="detail-text"> {this.state.concert._embedded.venues[0].city.name}, {this.state.concert._embedded.venues[0].state.name}</p>
+
                 {/* <h3>Minimum Price: {this.state.concert.priceRanges[0].min}</h3> */}
                 {/* <h3>Maximum Price: {this.state.concert.priceRanges[0].max}</h3> */}
-                <h3>Venue: {this.state.concert._embedded.venues[0].name}</h3>
+
+                <h3 className="detail-type">Venue: </h3><p>{this.state.concert._embedded.venues[0].name}</p>
+
+                <a href={this.state.concert.url}><button className="detail-ticket-button">Tickets</button></a>
+                
             </li>
     }
-    </div>
-            
+        </div>
+        </div>  
         );
     }
 }
