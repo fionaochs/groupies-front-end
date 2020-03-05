@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import { getConcert } from './api'
 import './detail.css';
-import { getConcerts, getSaved, addSaved, deleteSaved } from './api.js';
+import { getSaved, addSaved, deleteSaved } from './api.js';
 import * as moment from 'moment';
 import Mapp from './Map.js'
-// import ConcertData from './ConcertData';
 
 const isLoggedIn = () => JSON.parse(localStorage.getItem('user')); 
 
@@ -18,7 +17,6 @@ export default class Detail extends Component {
         console.log(concerts.body);
         if (concerts.body)
         {this.setState({ concert: concerts.body })}
-       
     }
 
     
@@ -49,7 +47,6 @@ export default class Detail extends Component {
 
                 const savedConcert = await addSaved(saved)
                     
-
                 console.log(savedConcert);
                 const data = await getSaved(); if(data.body) {
                     this.setState({
@@ -60,7 +57,6 @@ export default class Detail extends Component {
                 }
             }
         } catch {
-
         }
         
         button.classList.remove('lds-ellipsis');
@@ -71,65 +67,58 @@ export default class Detail extends Component {
 
 
     render() {
-        console.log('concert', this.state.concert)
         
         const { concert } = this.state;
         return (
             <div className="detail-box-container">
+
             <div className="detail-box">
             { this.state.concert.name &&
-
             <li className="detail-concert-list">
-                <h1 className="detail-h1">{this.state.concert.name}</h1>
-
-                <img src={this.state.concert.images[0].url} style={{width: "275px", height:"200px"}} alt="" id="concert-images"/>
-
-
-                <img src={this.state.concert.images[0].url} style={{width: "275px", height:"200px"}} alt="" id="concert-images"/>
-    
-                <h3 className="detail-type">Genre:</h3><p className="detail-text"> {this.state.concert.classifications[0].genre.name}</p>
-    
+                <div className="detail-page-save-button">
+                    <button onClick={e => this.handleSaved(null, e)}>save!</button>
+                </div>
+                    <h1 className="detail-h1">{this.state.concert.name}</h1>
 
                 <div className="flexparent-of-details">
+                
                 <div className="detail-page-image">
-                <img src={this.state.concert.images[0].url} style={{width: "625px", height:"450px"}} alt="" id="concert-images"/>
+                    <img src={this.state.concert.images[0].url} style={{width: "625px", height:"450px", display:"flex", justifyContent:"flex-start"}} alt="" id="concert-images"/>
                 </div>
                 <div className="detail-page-right-side">
+    
+                    <h3 className="detail-type">Date: {moment(this.state.concert.dates.start.localDate, 'YYYY-MM-DD').format('dddd, MMM Do, YYYY')}</h3>
 
-                <h3 className="detail-type">Genre:</h3><p className="detail-text"> {this.state.concert.classifications[0].genre.name}</p>        
-                <h3 className="detail-type">Date: {moment(this.state.concert.dates.start.localDate, 'YYYY-MM-DD').format('dddd, MMM Do, YYYY')}</h3>
+                    <h3 className="location-detail">Location: {this.state.concert._embedded.venues[0].city.name}, {this.state.concert._embedded.venues[0].state.name}</h3>
 
-                {/* <h3>Tickets: {this.state.concert.url}</h3> */}
+                    <h3 className="detail-type">Venue: {this.state.concert._embedded.venues[0].name}</h3>
 
-                <h3 className="detail-type">Location:</h3><p className="detail-text"> {this.state.concert._embedded.venues[0].city.name}, {this.state.concert._embedded.venues[0].state.name}</p>
+                </div>
 
-
-                {/* <h3>Price Range: ${this.state.concert.priceRanges[0].min} - ${this.state.concert.priceRanges[0].max} 
-                </h3> */}
-                {/* <h3>Maximum Price: {this.state.concert.priceRanges[0].max}</h3> */}
-
-                <h3 className="detail-type">Venue: </h3><p>{this.state.concert._embedded.venues[0].name}</p>
+                <h3 className="detail-type">Venue: {this.state.concert._embedded.venues[0].name}</h3>
 
                 <a href={this.state.concert.url}><button className="detail-ticket-button">Tickets</button></a>
+                </div>
                 
             <button onClick={e => this.handleSaved(null, e)}>save!</button>
             </li>
             }
         </div>
-        {this.state.concert._embedded &&
+
+        { this.state.concert._embedded &&
         
         <Mapp
         isMarkerShown
         googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDkXY-WjEgFiZ9rf4y32GmUpgSwUwNtMkE`} 
         loadingElement={<div style={{ height: '50%' }} />}
-        containerElement={<div style={{ height: '400px' }} />}
-        mapElement={<div style={{ height: '400px' }} />}
+        containerElement={<div style={{ height: '40px' }} />}
+        mapElement={<div style={{ height: '400px', width: '400px' }} />}
         lng={Number(this.state.concert._embedded.venues[0].location.longitude)}
-        lat={Number(this.state.concert._embedded.venues[0].location.latitude)}
-/>
-        }
-
-        </div>  
+        lat={Number(this.state.concert._embedded.venues[0].location.latitude)} />
+        
+        };
+        </div>
         );
     }
 }
+

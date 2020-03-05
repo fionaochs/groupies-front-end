@@ -4,10 +4,6 @@
     background-color: 0F5257;
 }
 
-.detail-concert-images {
-    height: 200px;
-}
-
 .detail-box-container li {
     list-style: none;
 }
@@ -33,12 +29,17 @@
 .detail-page-right-side {
     display: flex;
     flex-direction: column;
-    /* justify-content: ; */
+    justify-content: space-evenly;
+    height: 13vw;
+    width: 450px;
 }
 
 .detail-page-image {
     display: flex;
+}
 
+.location-detail {
+    white-space: normal;
 }
 
 .detail-box {
