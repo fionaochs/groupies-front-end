@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import './AboutUs.css';
 import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
+// import Footer from './Footer';
 
 export default class AboutUs extends Component {
     render() {
@@ -52,7 +53,7 @@ export default class AboutUs extends Component {
                         </li>
                     </ul>
                     <Link id='concert-link' to="/concerts">Back to concerts</Link>
-
+                    {/* <Footer /> */}
                 </div>
             </div>
         )
