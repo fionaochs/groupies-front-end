@@ -3,13 +3,9 @@ import { getConcert } from './api'
 import './detail.css';
 import { getConcerts, getSaved, addSaved, deleteSaved } from './api.js';
 import * as moment from 'moment';
-<<<<<<< HEAD
-=======
-import Mapp from './Map.js'
-// import ConcertData from './ConcertData';
+import Map from './Map.js'
 
 const isLoggedIn = () => JSON.parse(localStorage.getItem('user')); 
->>>>>>> e6098ee32285064fa87dafe6027561a4a5c819d2
 
 
 export default class Detail extends Component {
@@ -78,17 +74,14 @@ export default class Detail extends Component {
                 <div className="detail-page-save-button">
                     <button onClick={e => this.handleSaved(null, e)}>save!</button>
                 </div>
-<<<<<<< HEAD
                     <h1 className="detail-h1">{this.state.concert.name}</h1>
-=======
                 <h1 className="detail-h1">{this.state.concert.name}</h1>
 
                 <img src={this.state.concert.images[0].url} style={{width: "275px", height:"200px"}} alt="" id="concert-images"/>
     
-                <h3 className="detail-type">Genre:</h3><p className="detail-text"> {this.state.concert.classifications[0].genre.name}</p>
+                {/* <h3 className="detail-type">Genre:</h3><p className="detail-text"> {this.state.concert.classifications[0].genre.name}</p> */}
     
 
->>>>>>> e6098ee32285064fa87dafe6027561a4a5c819d2
                 <div className="flexparent-of-details">
                 
                 <div className="detail-page-image">
@@ -99,22 +92,15 @@ export default class Detail extends Component {
 
                     <h3 className="location-detail">Location: {this.state.concert._embedded.venues[0].city.name}, {this.state.concert._embedded.venues[0].state.name}</h3>
 
-                    <h3 className="detail-type" style={{}}>Venue: {this.state.concert._embedded.venues[0].name}</h3>
+                    <h3 className="detail-type">Venue: {this.state.concert._embedded.venues[0].name}</h3>
 
                     <a href={this.state.concert.url}><button className="detail-ticket-button">Tickets</button></a>
                 </div>
                 
                 </div>
             </li>
-            }
-<<<<<<< HEAD
-=======
-
-        </div>
-        <Mapp />
-        {/* </div> */}
->>>>>>> e6098ee32285064fa87dafe6027561a4a5c819d2
-        </div>  
-        );
-    }
+            }        
+            </div>
+    );
+};
 }
