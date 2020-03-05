@@ -1,7 +1,7 @@
 #search-bar-container button{
     border-radius: 25px;
-    color: #0F5257;
-    font: #0F5257;
+    color: white;
+    background-color: #0F5257;
     border: 2px solid #0F5257;
     margin: 10px 10px 10px 10px;
     padding: 5px 8px 5px 8px;
