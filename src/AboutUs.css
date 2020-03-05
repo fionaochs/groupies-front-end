@@ -9,25 +9,35 @@
 }
 
 .member-photo {
-    width: 155px;
+    width: 130px;
     height: 155px;
     object-fit: cover;
     border-radius: 50%;
-    margin-top: -.65em;
+    margin-top: -.85em;
     z-index: 999;
-    border: 1rem solid white;
+    border: 7px solid white;
     
 } 
+.owen-member-photo {
+    width: 130px;
+    height: 155px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: -.0em;
+    z-index: 999;
+    border: 7px solid white;
+    
+}
 .groupies-au-li {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    height: 350px;
+    height: 360px;
     width: 235px;
     min-width: 200px;
-    border: 4px solid #9c92a3;
+    border: 4px solid #eee ;
     border-radius: 10px;
     background-color: white; 
     margin-top: 0px;
@@ -39,6 +49,7 @@
 .groupies-card {
     margin-top: 100px;
     display: flex;
+    
 
 }
 
@@ -46,10 +57,13 @@
     display: inline-flex;
     justify-content: space-evenly;
     padding: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
     font-size: 20px;
     
 }
 #about-us-container {
+    background-color: #0B3142;
     display: flex;
     justify-content: center;
 }
@@ -68,4 +82,15 @@
     cursor: pointer;
     text-decoration: underline;
     color: #0B3142;
+}
+
+.groupies-card .card-img{
+    width: 108%;
+    height: 15rem;
+    border-radius: 10px;
+    margin-top: -8px;
+    margin-bottom: -270px;
+    object-fit: cover;
+   -webkit-clip-path: polygon(0 0, 100% 0, 100% 78%, 0% 95%);
+   clip-path: polygon(0 0, 100% 0, 100% 78%, 0% 95%);
 }
