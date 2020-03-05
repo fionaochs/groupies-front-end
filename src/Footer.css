@@ -1,0 +1,21 @@
+#footer-link:link {
+    background-color: white;
+    border-radius: 25px;
+    border-color: black;
+    padding: 8px 8px 8px 8px;
+    border: 15px;
+    text-decoration: none;
+    color: white;
+    font: white;
+    margin: 5px 10px 10px 10px;
+}
+#footer-link:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #0B3142;
+}
+#footer-id {
+    margin-top: 35px;
+    text-decoration: none;
+    
+}
