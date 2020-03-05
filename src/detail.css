@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet');
 
-h1 {
-    font-size: 20px;
+.detail-concert-list {
+    background-color: 0F5257;
 }
 
-li {
-    padding: 20px 10px;
-    margin: 20px 0px;
+.detail-concert-images {
+    height: 200px;
+}
+
+.detail-ticket-button {
+    color: white;
+    background-color: 0F5257;
+    border-radius: 25px;
+    font-size: 20px;
+    padding: 2px 8px;
 }
