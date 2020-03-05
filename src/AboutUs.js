@@ -31,7 +31,7 @@ export default class AboutUs extends Component {
                                 </div>
                         </li>
                         <li className='groupies-au-li'>
-                                <img src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/k-22-tb-s-26_2.jpg?auto=format&bg=transparent&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&mark=rawpixel-watermark.png&markalpha=90&markpad=13&markscale=10&markx=25&q=75&usm=15&vib=3&w=1400&s=51d1447c61254242225e357f1586f611" alt="card background" className="card-img"></img>
+                                <img src="https://i.imgur.com/dSvrhlP.jpg" alt="card background" className="card-img"></img>
                                 <img className="member-photo" src="https://media-exp1.licdn.com/dms/image/C5603AQE47KMl_B6AWA/profile-displayphoto-shrink_200_200/0?e=1588809600&v=beta&t=VniIr7T6sgVA3i2zFLuJ8snQulwfRVf4YTzoeRFJrVs" alt=""></img>
                             <h2 className='our-names'>Logan Scott</h2>
                                 <div className='our-links'>

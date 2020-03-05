@@ -11,13 +11,17 @@ const isLoggedIn = () => JSON.parse(localStorage.getItem('user'));
 
 export default class Detail extends Component {
     state = { concert: {} }
+
     async componentDidMount() {
 
         const concerts = await getConcert(this.props.match.params.id);
         console.log(concerts.body);
         if (concerts.body)
         {this.setState({ concert: concerts.body })}
+       
     }
+
+    
 
     handleSaved = async( saved_id=this.state.concert.id, e) => {
         const {concert}=this.state;
@@ -55,6 +59,10 @@ export default class Detail extends Component {
                     this.setState({ saved: [] })
                 }
             }
+            {this.setState({ 
+                lat: saved.lat, 
+                long: saved.long
+            })}
         } catch {
 
         }
@@ -67,7 +75,7 @@ export default class Detail extends Component {
 
 
     render() {
-        console.log(this.state.concert.length)
+        console.log('concert', this.state.concert)
         
         const { concert } = this.state;
         return (
@@ -86,7 +94,8 @@ export default class Detail extends Component {
                 <h3 className="detail-type">Location:</h3><p className="detail-text"> {this.state.concert._embedded.venues[0].city.name}, {this.state.concert._embedded.venues[0].state.name}</p>
 
 
-                {/* <h3>Minimum Price: {this.state.concert.priceRanges[0].min}</h3> */}
+                {/* <h3>Price Range: ${this.state.concert.priceRanges[0].min} - ${this.state.concert.priceRanges[0].max} 
+                </h3> */}
                 {/* <h3>Maximum Price: {this.state.concert.priceRanges[0].max}</h3> */}
 
                 <h3 className="detail-type">Venue: </h3><p>{this.state.concert._embedded.venues[0].name}</p>
@@ -97,7 +106,21 @@ export default class Detail extends Component {
             </li>
             }
         </div>
-        <Mapp />
+        {this.state.concert._embedded &&
+        // <Mapp 
+        //     lng={this.state.concert._embedded.venues[0].location.longitude}
+        //     lat={this.state.concert._embedded.venues[0].location.latitude}
+        // />
+        <Mapp
+        isMarkerShown
+        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDkXY-WjEgFiZ9rf4y32GmUpgSwUwNtMkE`} 
+        loadingElement={<div style={{ height: '50%' }} />}
+        containerElement={<div style={{ height: '400px' }} />}
+        mapElement={<div style={{ height: '400px' }} />}
+        lng={Number(this.state.concert._embedded.venues[0].location.longitude)}
+        lat={Number(this.state.concert._embedded.venues[0].location.latitude)}
+/>
+        }
         </div>  
         );
     }
