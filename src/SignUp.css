@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
 
-.container {
-    margin-top: 100px;
-
-    height: 100vh;
-    width: 100vw;        
+.signup-container {
+    margin-top: 0;
+    position: relative;
+    top: 100px;
+    background-color: #0F5257;
+    height: 100%;
+    width: 100%;        
     align-items: center;
     }
 
@@ -18,7 +20,7 @@
 
 .signup-form {
     align-items: center;
-    
+    margin-top: -100px;
 }
 .signup-form input {
     border: 0;
@@ -36,7 +38,7 @@
     font: white;
     margin: 5px 10px 10px 10px;
 }
-.signup-container button:hover{
+.signup-button:hover{
     cursor: pointer;
 
 }
