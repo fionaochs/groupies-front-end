@@ -33,12 +33,18 @@
 .detail-page-right-side {
     display: flex;
     flex-direction: column;
-    justify-content: ;
+    justify-content: space-evenly;
+    /* line-height: 10px; */
+    height: 17vw;
+    width: 450px;
 }
 
 .detail-page-image {
     display: flex;
+}
 
+.location-detail {
+    white-space: normal;
 }
 
 .detail-box {

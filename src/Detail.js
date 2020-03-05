@@ -1,12 +1,7 @@
 import React, { Component } from 'react'
 import { getConcert } from './api'
 import './detail.css';
-
 import { getConcerts, getSaved, addSaved, deleteSaved } from './api.js';
-
-// import ConcertData from './ConcertData';
-
-// import ConcertData from './ConcertData';
 import * as moment from 'moment';
 
 
@@ -46,7 +41,6 @@ export default class Detail extends Component {
 
                 const savedConcert = await addSaved(saved)
                     
-
                 console.log(savedConcert);
                 const data = await getSaved(); if(data.body) {
                     this.setState({
@@ -57,50 +51,40 @@ export default class Detail extends Component {
                 }
             }
         } catch {
-
         }
         button.classList.remove('lds-ellipsis');
         this.setState({loadingFav: false})
     }}
     render() {
-        console.log(this.state.concert.length)
         
         const { concert } = this.state;
         return (
             <div className="detail-box-container">
-            {/* <div className="detail-box"> */}
+            
             { this.state.concert.name &&
-
             <li className="detail-concert-list">
                 <div className="detail-page-save-button">
-                <button onClick={e => this.handleSaved(null, e)}>save!</button>
+                    <button onClick={e => this.handleSaved(null, e)}>save!</button>
                 </div>
-                <h1 className="detail-h1">{this.state.concert.name}</h1>
+                    <h1 className="detail-h1">{this.state.concert.name}</h1>
                 <div className="flexparent-of-details">
+                
                 <div className="detail-page-image">
-                <img src={this.state.concert.images[0].url} style={{width: "625px", height:"450px"}} alt="" id="concert-images"/>
+                    <img src={this.state.concert.images[0].url} style={{width: "625px", height:"450px", display:"flex", justifyContent:"flex-start"}} alt="" id="concert-images"/>
                 </div>
                 <div className="detail-page-right-side">
-                <h3 className="detail-type">Genre:</h3><p className="detail-text"> {this.state.concert.classifications[0].genre.name}</p>        
-                <h3 className="detail-type">Date: {moment(this.state.concert.dates.start.localDate, 'YYYY-MM-DD').format('dddd, MMM Do, YYYY')}</h3>
+                    <h3 className="detail-type">Date: {moment(this.state.concert.dates.start.localDate, 'YYYY-MM-DD').format('dddd, MMM Do, YYYY')}</h3>
 
-                {/* <h3>Tickets: {this.state.concert.url}</h3> */}
+                    <h3 className="location-detail">Location: {this.state.concert._embedded.venues[0].city.name}, {this.state.concert._embedded.venues[0].state.name}</h3>
 
-                <h3 className="detail-type">Location:</h3><p className="detail-text"> {this.state.concert._embedded.venues[0].city.name}, {this.state.concert._embedded.venues[0].state.name}</p>
+                    <h3 className="detail-type" style={{}}>Venue: {this.state.concert._embedded.venues[0].name}</h3>
 
-
-                {/* <h3>Minimum Price: {this.state.concert.priceRanges[0].min}</h3> */}
-                {/* <h3>Maximum Price: {this.state.concert.priceRanges[0].max}</h3> */}
-
-                <h3 className="detail-type">Venue: </h3><p>{this.state.concert._embedded.venues[0].name}</p>
-
-                <a href={this.state.concert.url}><button className="detail-ticket-button">Tickets</button></a>
+                    <a href={this.state.concert.url}><button className="detail-ticket-button">Tickets</button></a>
                 </div>
                 
                 </div>
             </li>
             }
-        {/* </div> */}
         </div>  
         );
     }
