@@ -35,13 +35,13 @@ export default class Detail extends Component {
                 tm_id: concert.id,
                 name: concert.name,
                 images: concert.images[1].url,
-                genre: concert.classifications[0].genre.name,
+                genre: concert.genre && concert.classifications[0].genre.name,
                 start_date: concert.dates.start.localDate,
                 tickets_url: concert.url,
                 city: concert._embedded.venues[0].city.name,
                 state: concert._embedded.venues[0].state.name,
-                price_min: concert.priceRanges[0].min ? concert.priceRanges[0].min : null,
-                price_max: concert.priceRanges[0].max ? concert.priceRanges[0].max : null,
+                price_min: concert.priceRanges && concert.priceRanges[0].min ? concert.priceRanges[0].min : null,
+                price_max: concert.priceRanges && concert.priceRanges[0].max ? concert.priceRanges[0].max : null,
                 long: concert._embedded.venues[0].location.longitude ? concert._embedded.venues[0].location.longitude : null,
                 lat: concert._embedded.venues[0].location.latitude ? concert._embedded.venues[0].location.latitude : null,
             }
@@ -81,7 +81,21 @@ export default class Detail extends Component {
 
             <li className="detail-concert-list">
                 <h1 className="detail-h1">{this.state.concert.name}</h1>
+
                 <img src={this.state.concert.images[0].url} style={{width: "275px", height:"200px"}} alt="" id="concert-images"/>
+
+
+                <img src={this.state.concert.images[0].url} style={{width: "275px", height:"200px"}} alt="" id="concert-images"/>
+    
+                <h3 className="detail-type">Genre:</h3><p className="detail-text"> {this.state.concert.classifications[0].genre.name}</p>
+    
+
+                <div className="flexparent-of-details">
+                <div className="detail-page-image">
+                <img src={this.state.concert.images[0].url} style={{width: "625px", height:"450px"}} alt="" id="concert-images"/>
+                </div>
+                <div className="detail-page-right-side">
+
                 <h3 className="detail-type">Genre:</h3><p className="detail-text"> {this.state.concert.classifications[0].genre.name}</p>        
                 <h3 className="detail-type">Date: {moment(this.state.concert.dates.start.localDate, 'YYYY-MM-DD').format('dddd, MMM Do, YYYY')}</h3>
 
@@ -103,10 +117,7 @@ export default class Detail extends Component {
             }
         </div>
         {this.state.concert._embedded &&
-        // <Mapp 
-        //     lng={this.state.concert._embedded.venues[0].location.longitude}
-        //     lat={this.state.concert._embedded.venues[0].location.latitude}
-        // />
+        
         <Mapp
         isMarkerShown
         googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDkXY-WjEgFiZ9rf4y32GmUpgSwUwNtMkE`} 
@@ -117,6 +128,7 @@ export default class Detail extends Component {
         lat={Number(this.state.concert._embedded.venues[0].location.latitude)}
 />
         }
+
         </div>  
         );
     }

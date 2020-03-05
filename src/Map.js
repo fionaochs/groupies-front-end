@@ -1,6 +1,11 @@
+
 import React from 'react'
 import { GoogleMap, withScriptjs, withGoogleMap, Marker } from 'react-google-maps'
 import ConcertData from './ConcertData.js'
+
+import React from 'react';
+import { GoogleMap, withScriptjs, withGoogleMap } from 'react-google-maps';
+
 
 
 // function Map(lat, lng) {
