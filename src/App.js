@@ -7,9 +7,7 @@ import {
   BrowserRouter as Router,
 } from 'react-router-dom';
 import ConcertList from "./ConcertList.js"
-import Header from './Header';
 import Detail from './Detail.js';
-// import SignIn from './SignIn.js'
 import SignUp from './SignUp.js'
 import Saved from './Saved.js'
 import AboutUs from './AboutUs.js'
@@ -21,10 +19,6 @@ export default class App extends React.Component {
     return (
       <Router>
         <div>
-          {/* <Header /> */}
-          {/* <Link to="/saved">Saved</Link>&nbsp;
-          <Link to="/">go home</Link>
-          <Link to="/about">about us</Link> */}
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/signup" component={SignUp} />

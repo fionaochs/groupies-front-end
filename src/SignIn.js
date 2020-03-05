@@ -9,11 +9,12 @@ export default class SignIn extends Component {
     state = {
         usernameSignIn: '',
         passwordSignIn: '',
-        
+        isSignUp: false
         
     }
 
-    handleSignIn = async () => {
+    handleSignIn = async (e) => {
+        e.preventDefault();
         
         const signIn = await request.post(`https://vast-ravine-67223.herokuapp.com/api/auth/signin`, {
             email: this.state.usernameSignIn,
@@ -30,13 +31,14 @@ export default class SignIn extends Component {
         return (    
             <div className="signin-container">
                 <form className="signin-form" onSubmit={this.handleSignIn}>
-                    <input value={ this.state.usernameSignIn} onChange={(e) => this.setState({ usernameSignIn: e.target.value})} placeholder="Username"/>
+                    <input type="text" value={ this.state.usernameSignIn} onChange={(e) => this.setState({ usernameSignIn: e.target.value})} placeholder="Email"/>
                     <br/>
-                    <input value={ this.state.passwordSignIn} onChange={(e) => this.setState({ passwordSignIn: e.target.value})} placeholder="Password"/>
-                    <br/>
-                    <button>Sign Up?</button>   
-                    <button>Sign In</button> 
+                    <input type="password" value={ this.state.passwordSignIn} onChange={(e) => this.setState({ passwordSignIn: e.target.value})} placeholder="Password"/>
+                    {/* { this.state.isSignUp && <div>Si</div>} */}
+                    <br/>   
+                    <button type="submit">Sign In</button> 
                 </form>    
+                
             </div>
         )
     }
