@@ -1,14 +1,19 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import * as moment from 'moment';
 export default class ConcertData extends Component {
     render() {
+        let concertdate = this.props.concert.dates.start.localDate;
+        console.log(this.props.concert.dates.start.localDate);
+        concertdate = moment(concertdate, 'YYYY-MM-DD').format('dddd, MMM Do, YYYY');
+        console.log(concertdate);
         return (
             <li className="concert-list">
                 <Link  to={`concert/${this.props.concert.id}`} key={this.props.concert.id}>
-                <h2>{this.props.concert.name}</h2>
                 <img src={this.props.concert.images[0].url} style={{width: "125px", height:"100px"}} alt="" className="concert-images"/>
+                <h2>{this.props.concert.name}</h2>
                 {/* <h3>Genre: {this.props.concert.classifications[0].genre.name}</h3> */}
-                <h3>{this.props.concert.dates.start.localDate}</h3>
+                <h3>{concertdate}</h3>
                 {/* <h3>Tickets: {this.props.concert.url}</h3> */}
                 {/* <h3>State: {this.props.concert._embedded.venues[0].state.name}</h3> */}
                 {/* <h3>Minimum Price: {this.props.concert.priceRanges[0].min}</h3> */}

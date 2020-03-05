@@ -12,13 +12,14 @@ import SignUp from './SignUp.js'
 import Saved from './Saved.js'
 import AboutUs from './AboutUs.js'
 import HomePage from './HomePage.js'
-
+// import Header from './Header.js'
 
 export default class App extends React.Component {
   render() {
     return (
       <Router>
-        <div>
+        <div id="app-div">
+          {/* {<Route exact path="/"/> ? <HomePage//> : <Header/>} */}
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/signup" component={SignUp} />

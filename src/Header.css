@@ -24,7 +24,7 @@ html, body{
 body{
     background-color: white;
 }
-button{
+.header button{
     color: #0F5257;
     background-color: #0B3142;
 }
