@@ -4,7 +4,7 @@
     background-color: white;
 } */
 .our-names{
-    color: #0B3142;
+    color: #0F5257;
     font-family: 'Spartan', sans-serif;
 }
 
@@ -37,7 +37,7 @@
     height: 360px;
     width: 235px;
     min-width: 200px;
-    border: 4px solid #eee ;
+    border: 4px solid #C6B9CD ;
     border-radius: 10px;
     background-color: white; 
     margin-top: 0px;
@@ -63,7 +63,7 @@
     
 }
 #about-us-container {
-    background-color: #0B3142;
+    background-color: #0F5257;
     display: flex;
     justify-content: center;
 }

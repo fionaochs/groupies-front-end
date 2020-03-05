@@ -3,9 +3,15 @@ import { getConcert } from './api'
 import './detail.css';
 import { getConcerts, getSaved, addSaved, deleteSaved } from './api.js';
 import * as moment from 'moment';
-
+<<<<<<< HEAD
+=======
+import Mapp from './Map.js'
+// import ConcertData from './ConcertData';
 
 const isLoggedIn = () => JSON.parse(localStorage.getItem('user')); 
+>>>>>>> e6098ee32285064fa87dafe6027561a4a5c819d2
+
+
 export default class Detail extends Component {
     state = { concert: {} }
     async componentDidMount() {
@@ -15,6 +21,7 @@ export default class Detail extends Component {
         if (concerts.body)
         {this.setState({ concert: concerts.body })}
     }
+
     handleSaved = async( saved_id=this.state.concert.id, e) => {
         const {concert}=this.state;
         if(!this.state.loadingFav){
@@ -52,9 +59,14 @@ export default class Detail extends Component {
             }
         } catch {
         }
+        
         button.classList.remove('lds-ellipsis');
         this.setState({loadingFav: false})
     }}
+
+
+
+
     render() {
         
         const { concert } = this.state;
@@ -66,7 +78,17 @@ export default class Detail extends Component {
                 <div className="detail-page-save-button">
                     <button onClick={e => this.handleSaved(null, e)}>save!</button>
                 </div>
+<<<<<<< HEAD
                     <h1 className="detail-h1">{this.state.concert.name}</h1>
+=======
+                <h1 className="detail-h1">{this.state.concert.name}</h1>
+
+                <img src={this.state.concert.images[0].url} style={{width: "275px", height:"200px"}} alt="" id="concert-images"/>
+    
+                <h3 className="detail-type">Genre:</h3><p className="detail-text"> {this.state.concert.classifications[0].genre.name}</p>
+    
+
+>>>>>>> e6098ee32285064fa87dafe6027561a4a5c819d2
                 <div className="flexparent-of-details">
                 
                 <div className="detail-page-image">
@@ -85,6 +107,13 @@ export default class Detail extends Component {
                 </div>
             </li>
             }
+<<<<<<< HEAD
+=======
+
+        </div>
+        <Mapp />
+        {/* </div> */}
+>>>>>>> e6098ee32285064fa87dafe6027561a4a5c819d2
         </div>  
         );
     }
