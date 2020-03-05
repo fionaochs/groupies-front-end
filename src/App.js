@@ -25,8 +25,8 @@ export default class App extends React.Component {
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Fragment>
-              <Header />
               <Route exact path="/signup" component={SignUp} />
+              <Header />
               <Route exact path="/saved" component={Saved} />
               <Route exact path="/concerts" component={ConcertList} />
               <Route exact path="/concert/:id" component={Detail} />

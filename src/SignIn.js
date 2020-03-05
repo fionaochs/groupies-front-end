@@ -23,7 +23,7 @@ export default class SignIn extends Component {
 
         alert('you are now logged in');
         localStorage.setItem('user', JSON.stringify(signIn.body));
-        this.props.history.push('/');
+        this.props.history.push('/concerts');
     }
 
 
