@@ -1,16 +1,23 @@
 
 @import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
 
-body {
-  background-color: white;
-  padding: 5px;
-
-  font-family: 'spartan';  
-
-  text-align: center;
-  
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
+body {
+  background-color: white;
+  font-family: 'spartan';  
+  text-align: center;
+}
+#app-div{
+  background-color: white;
+  height: 100%;
+  width: 100%;
+}
 ul {
   list-style-type: none;
   /* display: flex; */
@@ -23,7 +30,11 @@ ul {
 li {
   /* border: 4px solid #0B3140; */
   /* float: left; */
+
   /* background-color: #D6D3F0; */
+
+  background-color: white;
+
   /* width: 30%; */
 }
 

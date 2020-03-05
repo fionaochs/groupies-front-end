@@ -1,10 +1,39 @@
 @import url('https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet');
 
-h1 {
-    font-size: 20px;
+.detail-concert-list {
+    background-color: 0F5257;
 }
 
-li {
-    padding: 20px 10px;
-    margin: 20px 0px;
+.detail-concert-images {
+    height: 200px;
+}
+
+
+
+.detail-box-container {
+    width: 100%;
+    padding: 20px;
+}
+.detail-box {
+    width: 65%;
+    justify-content: center;
+    margin: 0 auto;
+    
+    
+}
+.detail-h1 {
+    color: #0B3142;
+}
+.detail-type {
+    
+}
+
+.detail-ticket-button {
+    color: white;
+    background-color: #0F5257;
+    border-radius: 25px;
+    font-size: 20px;
+    padding: 2px 8px;
+    cursor: pointer;
+    margin: 0px 0px 20px 0px;
 }
