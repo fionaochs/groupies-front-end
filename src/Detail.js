@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { getConcert } from './api'
 import './detail.css';
 // import ConcertData from './ConcertData';
-
+import * as moment from 'moment';
 
 export default class Detail extends Component {
     state = { concert: {} }
@@ -14,8 +14,8 @@ export default class Detail extends Component {
         {this.setState({ concert: concerts.body })}
     }
     render() {
-        console.log('hello')
         console.log(this.state.concert.length)
+        
         const { concert } = this.state;
         return (
             <div>
@@ -24,7 +24,7 @@ export default class Detail extends Component {
                 <h1>{this.state.concert.name}</h1>
                 <img src={this.state.concert.images[0].url} style={{width: "275px", height:"200px"}} alt="" id="concert-images"/>
                 <h3>Genre: {this.state.concert.classifications[0].genre.name}</h3>
-                <h3>Date: {this.state.concert.dates.start.localDate}</h3>
+                <h3>Date: {moment(this.state.concert.dates.start.localDate, 'YYYY-MM-DD').format('dddd, MMM Do, YYYY')}</h3>
                 <h3>Tickets: {this.state.concert.url}</h3>
                 <h3>City: {this.state.concert._embedded.venues[0].city.name}</h3>
                 <h3>State: {this.state.concert._embedded.venues[0].state.name}</h3>
