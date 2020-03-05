@@ -8,6 +8,9 @@
     height: 200px;
 }
 
+.detail-box li {
+    list-style: none;
+}
 
 
 .detail-box-container {
