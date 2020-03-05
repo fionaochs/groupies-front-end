@@ -4,7 +4,7 @@ import SearchBar from './SearchBar.js';
 import { getConcerts, getSaved, addSaved, deleteSaved } from './api.js';
 // import { SignUpModal } from './SignUpModal.js' 
 import './loading.css';
-import './ConcertList.css';
+import './CList.css';
 import Header from './Header.js'
 
 const isLoggedIn = () => JSON.parse(localStorage.getItem('user')); 
