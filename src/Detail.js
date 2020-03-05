@@ -59,10 +59,6 @@ export default class Detail extends Component {
                     this.setState({ saved: [] })
                 }
             }
-            {this.setState({ 
-                lat: saved.lat, 
-                long: saved.long
-            })}
         } catch {
 
         }

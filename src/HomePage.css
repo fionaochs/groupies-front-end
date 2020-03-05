@@ -1,19 +1,33 @@
 @import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Roboto+Condensed|Roboto+Mono|Spartan&display=swap');
+
 .container {
     height: 100vh;
     width: 100vw;        
     align-items: center;
 }
-
+#concert-image{
+    height: 150px;
+    width: 470px;
+    /* float: right; */
+}
+.logo{
+    /* display: flex;
+    justify-content: center; */
+}
 .homepage-container h1 {
-    font-family: 'spartan';  
+    font-family: 'Quicksand';  
     color: white;
-    font-size: 65px;
+    font-size: 75px;
     position: relative;
     top: 20px;
     margin: 0;
 }
-
+.homepage-container h2 {
+    font-family: 'Quicksand';  
+    font-size: 30px;
+}
 #header {
     position: fixed;
     width: 100%;
