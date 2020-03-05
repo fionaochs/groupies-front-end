@@ -80,6 +80,12 @@ export default class Detail extends Component {
                 <button onClick={e => this.handleSaved(null, e)}>save!</button>
                 </div>
                 <h1 className="detail-h1">{this.state.concert.name}</h1>
+
+                <img src={this.state.concert.images[0].url} style={{width: "275px", height:"200px"}} alt="" id="concert-images"/>
+    
+                <h3 className="detail-type">Genre:</h3><p className="detail-text"> {this.state.concert.classifications[0].genre.name}</p>
+    
+
                 <div className="flexparent-of-details">
                 <div className="detail-page-image">
                 <img src={this.state.concert.images[0].url} style={{width: "625px", height:"450px"}} alt="" id="concert-images"/>
