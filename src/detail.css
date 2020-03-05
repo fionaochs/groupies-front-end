@@ -33,7 +33,7 @@
 .detail-page-right-side {
     display: flex;
     flex-direction: column;
-    justify-content: ;
+    /* justify-content: ; */
 }
 
 .detail-page-image {

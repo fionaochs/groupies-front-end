@@ -25,11 +25,13 @@ export default class LogIn extends Component {
         })
         alert('thanks for signing up!');
         localStorage.setItem('user', JSON.stringify(signUp.body));
-        this.props.history.push('/');
+        this.props.history.push('/concerts');
 
     }
 
     render() {
+        console.log(this.props, 'signup props');
+        
         return (
             <div className="signup-container">
                 <form className="signup-form">

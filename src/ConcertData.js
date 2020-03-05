@@ -4,9 +4,10 @@ import * as moment from 'moment';
 export default class ConcertData extends Component {
     render() {
         let concertdate = this.props.concert.dates.start.localDate;
-        console.log(this.props.concert.dates.start.localDate);
+
         concertdate = moment(concertdate, 'YYYY-MM-DD').format('dddd, MMM Do, YYYY');
-        console.log(concertdate);
+        
+        console.log(this.props.saved)
         return (
             <li className="concert-list">
                 <Link  to={`concert/${this.props.concert.id}`} key={this.props.concert.id}>
@@ -23,6 +24,7 @@ export default class ConcertData extends Component {
                 </Link>
                 <span className={this.props.saved.findIndex(el => el.tm_id === this.props.concert.id) !== -1 ? 'saved' : ''} 
                     onClick={ (e) => {this.props.handleSaved(this.props.concert, this.props.saved.findIndex(el => el.tm_id === this.props.concert.id), e)}}>♫<div></div><div></div><div></div><div></div></span>
+                
             </li>
         )
     }
