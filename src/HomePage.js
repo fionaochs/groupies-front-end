@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import SignIn from './SignIn.js'
 import SignUp from './SignUp.js'
 import './HomePage.css'
-
+import Concert from './groupies2.jpg'
 export default class HomePage extends Component {
     state = {
         isSignUp: false
@@ -16,6 +16,7 @@ export default class HomePage extends Component {
                     <br />
                     <h2>Connecting through concerts </h2>
                 </div>
+                <img id="concert-image" src={Concert} alt="concert"/>
 
                 {this.state.isSignUp ? <SignUp /> : <SignIn/>}
 
