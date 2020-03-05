@@ -20,11 +20,12 @@ export default class Detail extends Component {
         return (
             <div>
             { this.state.concert.name &&
-            <li className="concert-list">
+            <li className="detail-concert-list">
                 <h1>{this.state.concert.name}</h1>
-                <img src={this.state.concert.images[0].url} style={{width: "275px", height:"200px"}} alt="" className="concert-images"/>
+                <img src={this.state.concert.images[0].url} style={{width: "275px", height:"200px"}} alt="" className="detail-concert-images"/>
                 <h3>Genre: {this.state.concert.classifications[0].genre.name}</h3>
                 <h3>Date: {this.state.concert.dates.start.localDate}</h3>
+                <a href={this.state.concert.url}><button className="detail-ticket-button">Tickets</button></a>
                 <h3>Tickets: {this.state.concert.url}</h3>
                 <h3>City: {this.state.concert._embedded.venues[0].city.name}</h3>
                 <h3>State: {this.state.concert._embedded.venues[0].state.name}</h3>
