@@ -11,13 +11,17 @@ const isLoggedIn = () => JSON.parse(localStorage.getItem('user'));
 
 export default class Detail extends Component {
     state = { concert: {} }
+
     async componentDidMount() {
 
         const concerts = await getConcert(this.props.match.params.id);
         console.log(concerts.body);
         if (concerts.body)
         {this.setState({ concert: concerts.body })}
+       
     }
+
+    
 
     handleSaved = async( saved_id=this.state.concert.id, e) => {
         const {concert}=this.state;
@@ -67,19 +71,19 @@ export default class Detail extends Component {
 
 
     render() {
-        console.log(this.state.concert.length)
+        console.log('concert', this.state.concert)
         
         const { concert } = this.state;
         return (
             <div className="detail-box-container">
-            {/* <div className="detail-box"> */}
+            <div className="detail-box">
             { this.state.concert.name &&
 
             <li className="detail-concert-list">
-                <div className="detail-page-save-button">
-                <button onClick={e => this.handleSaved(null, e)}>save!</button>
-                </div>
                 <h1 className="detail-h1">{this.state.concert.name}</h1>
+
+                <img src={this.state.concert.images[0].url} style={{width: "275px", height:"200px"}} alt="" id="concert-images"/>
+
 
                 <img src={this.state.concert.images[0].url} style={{width: "275px", height:"200px"}} alt="" id="concert-images"/>
     
@@ -91,6 +95,7 @@ export default class Detail extends Component {
                 <img src={this.state.concert.images[0].url} style={{width: "625px", height:"450px"}} alt="" id="concert-images"/>
                 </div>
                 <div className="detail-page-right-side">
+
                 <h3 className="detail-type">Genre:</h3><p className="detail-text"> {this.state.concert.classifications[0].genre.name}</p>        
                 <h3 className="detail-type">Date: {moment(this.state.concert.dates.start.localDate, 'YYYY-MM-DD').format('dddd, MMM Do, YYYY')}</h3>
 
@@ -99,20 +104,30 @@ export default class Detail extends Component {
                 <h3 className="detail-type">Location:</h3><p className="detail-text"> {this.state.concert._embedded.venues[0].city.name}, {this.state.concert._embedded.venues[0].state.name}</p>
 
 
-                {/* <h3>Minimum Price: {this.state.concert.priceRanges[0].min}</h3> */}
+                {/* <h3>Price Range: ${this.state.concert.priceRanges[0].min} - ${this.state.concert.priceRanges[0].max} 
+                </h3> */}
                 {/* <h3>Maximum Price: {this.state.concert.priceRanges[0].max}</h3> */}
 
                 <h3 className="detail-type">Venue: </h3><p>{this.state.concert._embedded.venues[0].name}</p>
 
                 <a href={this.state.concert.url}><button className="detail-ticket-button">Tickets</button></a>
-                </div>
                 
-                </div>
+            <button onClick={e => this.handleSaved(null, e)}>save!</button>
             </li>
             }
-
+        </div>
+        {this.state.concert._embedded &&
         
-        <Mapp />
+        <Mapp
+        isMarkerShown
+        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDkXY-WjEgFiZ9rf4y32GmUpgSwUwNtMkE`} 
+        loadingElement={<div style={{ height: '50%' }} />}
+        containerElement={<div style={{ height: '400px' }} />}
+        mapElement={<div style={{ height: '400px' }} />}
+        lng={Number(this.state.concert._embedded.venues[0].location.longitude)}
+        lat={Number(this.state.concert._embedded.venues[0].location.latitude)}
+/>
+        }
 
         </div>  
         );
