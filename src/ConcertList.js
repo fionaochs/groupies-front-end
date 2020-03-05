@@ -60,28 +60,31 @@ export default class ConcertList extends Component {
     handleCity = (e) => this.setState({ searchCity: e.target.value })
 
     handleSaved = async(concert, saved_id, e) => {
+        console.log('||||||||||', 'clicked')
         if(!this.state.loadingFav){
+            console.log('||||||||||', 'HIHIHIH', isLoggedIn())
             this.setState({loadingFav: true})
             const button = e.target;
             button.classList.add('lds-ellipsis');
             console.log(saved_id);
-            try {
+            // try {
+                console.log('|||||', concert)
             const saved = {
                 tm_id: concert.id,
                 name: concert.name,
                 images: concert.images[1].url,
-                genre: concert.classifications[0].genre.name,
+                genre: concert.genre && concert.classifications[0].genre.name,
                 start_date: concert.dates.start.localDate,
                 tickets_url: concert.url,
                 city: concert._embedded.venues[0].city.name,
                 state: concert._embedded.venues[0].state.name,
-                price_min: concert.priceRanges[0].min ? concert.priceRanges[0].min : null,
-                price_max: concert.priceRanges[0].max ? concert.priceRanges[0].max : null,
+                price_min: concert.priceRanges && concert.priceRanges[0].min ? concert.priceRanges[0].min : null,
+                price_max: concert.priceRanges && concert.priceRanges[0].max ? concert.priceRanges[0].max : null,
                 long: concert._embedded.venues[0].location.longitude ? concert._embedded.venues[0].location.longitude : null,
                 lat: concert._embedded.venues[0].location.latitude ? concert._embedded.venues[0].location.latitude : null,
             }
             if (isLoggedIn()) {
-
+console.log('||||||||||', isLoggedIn())
                 const savedConcert = saved_id === -1 
                     ? await addSaved(saved)
                     : await deleteSaved(this.state.saved[saved_id].id);
@@ -95,14 +98,15 @@ export default class ConcertList extends Component {
                     this.setState({ saved: [] })
                 }
             }
-        } catch {
-
-        }
+        // } catch (e) {
+        //     console.log('||||||||error', e)
+        // }
         button.classList.remove('lds-ellipsis');
         this.setState({loadingFav: false})
     }
     }
     render() {
+
         return (
             <div id="concert-list-container">
                 <header>
@@ -119,7 +123,7 @@ export default class ConcertList extends Component {
                 <ul id='concert-list'>
                     {
                         this.state.concerts.map(concert =>
-                        <ConcertData saved={ this.state.saved } handleSaved={ this.handleSaved } concert={concert} />
+                        <ConcertData saved={ this.state.saved } key={concert.tm_id} handleSaved={ this.handleSaved } concert={concert} />
                         )
                     }
                 </ul>
