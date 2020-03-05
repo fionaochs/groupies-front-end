@@ -1,16 +1,14 @@
 import React, { Component } from 'react'
 import { getConcert } from './api'
 import './detail.css';
-
 import { getConcerts, getSaved, addSaved, deleteSaved } from './api.js';
-
-// import ConcertData from './ConcertData';
-
-// import ConcertData from './ConcertData';
 import * as moment from 'moment';
-
+import Mapp from './Map.js'
+// import ConcertData from './ConcertData';
 
 const isLoggedIn = () => JSON.parse(localStorage.getItem('user')); 
+
+
 export default class Detail extends Component {
     state = { concert: {} }
     async componentDidMount() {
@@ -20,6 +18,7 @@ export default class Detail extends Component {
         if (concerts.body)
         {this.setState({ concert: concerts.body })}
     }
+
     handleSaved = async( saved_id=this.state.concert.id, e) => {
         const {concert}=this.state;
         if(!this.state.loadingFav){
@@ -59,9 +58,14 @@ export default class Detail extends Component {
         } catch {
 
         }
+        
         button.classList.remove('lds-ellipsis');
         this.setState({loadingFav: false})
     }}
+
+
+
+
     render() {
         console.log(this.state.concert.length)
         
@@ -100,6 +104,9 @@ export default class Detail extends Component {
                 </div>
             </li>
             }
+
+        </div>
+        <Mapp />
         {/* </div> */}
         </div>  
         );
