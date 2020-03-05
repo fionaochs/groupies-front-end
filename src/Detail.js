@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
 import { getConcert } from './api'
 import './detail.css';
+
+// import ConcertData from './ConcertData';
+import * as moment from 'moment';
+import Share from './Share';
+
 import { getSaved, addSaved, deleteSaved } from './api.js';
 import * as moment from 'moment';
 import Mapp from './Map.js'
 
 const isLoggedIn = () => JSON.parse(localStorage.getItem('user')); 
+
 
 
 export default class Detail extends Component {
@@ -18,6 +24,8 @@ export default class Detail extends Component {
         if (concerts.body)
         {this.setState({ concert: concerts.body })}
     }
+
+
 
     
 
@@ -66,6 +74,7 @@ export default class Detail extends Component {
 
 
 
+
     render() {
         
         const { concert } = this.state;
@@ -73,8 +82,12 @@ export default class Detail extends Component {
             <div className="detail-box-container">
 
             { this.state.concert.name &&
+
+
+
+            <div className="detail-box">
+            { this.state.concert.name &&
             <li className="detail-concert-list">
-                
                 <div className="detail-page-save-button">
                     <button onClick={e => this.handleSaved(null, e)}>save!</button>
                 </div>
@@ -108,6 +121,7 @@ export default class Detail extends Component {
         }
 
         </div>
+
         );
     }
 }
