@@ -41,7 +41,7 @@ export default class LogIn extends Component {
                     <br />
                     <input type="text" value={ this.state.city} onChange={(e) => this.setState({ city: e.target.value})} placeholder="City"/>
                     <br />
-                    <button onClick={ this.handleSignUp }>Sign up</button>  
+                    <button id="signup-button"onClick={ this.handleSignUp }>Sign up</button>  
                     <br />
                 
                 </form>
