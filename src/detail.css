@@ -8,10 +8,39 @@
     height: 200px;
 }
 
-.detail-box-container {
-    width: 100%;
-    padding: 20px;
+.detail-box-container li {
+    list-style: none;
 }
+
+.flexparent-of-details {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.detail-page-save-button {
+    display: flex;
+    justify-content: flex-end;
+    float: right;
+    padding-right: 60px;
+    padding-top: 20px;
+}
+
+.detail-h1 {
+    display: flex;
+    padding-left: 105px;
+}
+
+.detail-page-right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: ;
+}
+
+.detail-page-image {
+    display: flex;
+
+}
+
 .detail-box {
     width: 65%;
     justify-content: center;
