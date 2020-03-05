@@ -7,23 +7,23 @@ ul#concert-list {
 #concert-list-container {
     margin: 0 auto;
     text-align: center;
-    background-color: #D6D3F0;
+    background-color: white;
 }
 
 #concert-list a {
     text-decoration: none;
-    color: black;
+    color: #0B3142;
 }
 
 #concert-list a:active, #concert-list a:visited {
-    color: black;
+    color: #0B3142;
 }
 
 #concert-list li {
     position: relative;
     padding: 8px;
     margin: 8px 0;
-    background-color: #C6B9CD;
+    background-color: white;
     text-align: left;
     border: 2px solid #0B3140;
 }
@@ -58,8 +58,8 @@ ul#concert-list {
     color: #0F5257;
     background-color: white;
     border-radius: 15%;
-  }
+}
 .concert-list button.saved{
     font-size: 20px;
     color: #0F5257;
-  }
+}
