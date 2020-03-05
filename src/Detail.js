@@ -111,9 +111,9 @@ export default class Detail extends Component {
             </li>
             }
 
-        </div>
+        
         <Mapp />
-        {/* </div> */}
+
         </div>  
         );
     }
