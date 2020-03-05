@@ -22,10 +22,6 @@ export default class Detail extends Component {
         {this.setState({ concert: concerts.body })}
     }
 
-
-
-    
-
     handleSaved = async( saved_id=this.state.concert.id, e) => {
         const {concert}=this.state;
         if(!this.state.loadingFav){
@@ -67,11 +63,6 @@ export default class Detail extends Component {
         button.classList.remove('lds-ellipsis');
         this.setState({loadingFav: false})
     }}
-
-
-
-
-
     render() {
         
         const { concert } = this.state;
@@ -111,6 +102,8 @@ export default class Detail extends Component {
         lat={Number(this.state.concert._embedded.venues[0].location.latitude)} />
         
         }
+
+        <Share concert={this.state.concert}/>
 
         </div>
 
