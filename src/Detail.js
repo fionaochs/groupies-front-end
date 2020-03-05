@@ -74,9 +74,9 @@ export default class Detail extends Component {
             <li className="detail-concert-list">
                 <h1 className="detail-h1">{this.state.concert.name}</h1>
                 <img src={this.state.concert.images[0].url} style={{width: "275px", height:"200px"}} alt="" id="concert-images"/>
-          
+    
                 <h3 className="detail-type">Genre:</h3><p className="detail-text"> {this.state.concert.classifications[0].genre.name}</p>
-          
+    
                 <h3 className="detail-type">Date: {moment(this.state.concert.dates.start.localDate, 'YYYY-MM-DD').format('dddd, MMM Do, YYYY')}</h3>
 
                 {/* <h3>Tickets: {this.state.concert.url}</h3> */}
