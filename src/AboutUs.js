@@ -13,7 +13,7 @@ export default class AboutUs extends Component {
                     <h1>The Groupies</h1>
                     <ul className="groupies-card">
                         <li className='groupies-au-li'>
-                                <img src="https://images.unsplash.com/photo-1568157876751-7af8a7cc04c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" alt="card background"  className="card-img"></img>
+                                <img src="/burningman.jpg" alt="card background"  className="card-img"></img>
                                 <img className="member-photo" src="https://media-exp1.licdn.com/dms/image/C5603AQGuTnFZSlQTDg/profile-displayphoto-shrink_200_200/0?e=1588809600&v=beta&t=wVw2waRURUwVMkWgV8GIph1_tOW8m23Fsoh7wOhgK8s" alt=""></img>
                             <h2 className='our-names'>Fiona Ochs</h2>
                                 <div className='our-links'>
