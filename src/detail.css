@@ -34,7 +34,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    /* line-height: 10px; */
     height: 17vw;
     width: 450px;
 }
