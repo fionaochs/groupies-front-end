@@ -81,7 +81,6 @@ export default class Detail extends Component {
         return (
             <div className="detail-box-container">
 
-            <div className="detail-box">
             { this.state.concert.name &&
 
 
@@ -89,53 +88,25 @@ export default class Detail extends Component {
             <div className="detail-box">
             { this.state.concert.name &&
             <li className="detail-concert-list">
-
-                <h1 className="detail-h1">{this.state.concert.name}</h1>
-                <img src={this.state.concert.images[0].url} style={{width: "275px", height:"200px"}} alt="" id="concert-images"/>
-                <h3 className="detail-type">Genre:</h3><p className="detail-text"> {this.state.concert.classifications[0].genre.name}</p>        
-                <h3 className="detail-type">Date: {moment(this.state.concert.dates.start.localDate, 'YYYY-MM-DD').format('dddd, MMM Do, YYYY')}</h3>
-
-                <h3>Tickets: {this.state.concert.url}</h3>
-
                 <div className="detail-page-save-button">
                     <button onClick={e => this.handleSaved(null, e)}>save!</button>
                 </div>
+
                     <h1 className="detail-h1">{this.state.concert.name}</h1>
 
-                <div className="flexparent-of-details">
-                
                 <div className="detail-page-image">
-                    <img src={this.state.concert.images[0].url} style={{width: "625px", height:"450px", display:"flex", justifyContent:"flex-start"}} alt="" id="concert-images"/>
+                    <img src={this.state.concert.images[0].url} style={{width: "625px", height:"450px"}} alt="" id="concert-images"/>
                 </div>
+
                 <div className="detail-page-right-side">
-    
                     <h3 className="detail-type">Date: {moment(this.state.concert.dates.start.localDate, 'YYYY-MM-DD').format('dddd, MMM Do, YYYY')}</h3>
-
                     <h3 className="location-detail">Location: {this.state.concert._embedded.venues[0].city.name}, {this.state.concert._embedded.venues[0].state.name}</h3>
-
-
                     <h3 className="detail-type">Venue: {this.state.concert._embedded.venues[0].name}</h3>
-
-                </div>
-
-                <h3 className="detail-type">Venue: {this.state.concert._embedded.venues[0].name}</h3>
-
-                <a href={this.state.concert.url}><button className="detail-ticket-button">Tickets</button></a>
-
-                <Share concert={this.state.concert}/>
-
-            </li>
-    }
-        </div>
-        </div>  
-
+                    <a href={this.state.concert.url}><button className="detail-ticket-button">Tickets</button></a>
                 </div>
                 
-            <button onClick={e => this.handleSaved(null, e)}>save!</button>
             </li>
             }
-        </div>
-
         { this.state.concert._embedded &&
         
         <Mapp
@@ -147,7 +118,8 @@ export default class Detail extends Component {
         lng={Number(this.state.concert._embedded.venues[0].location.longitude)}
         lat={Number(this.state.concert._embedded.venues[0].location.latitude)} />
         
-        };
+        }
+
         </div>
 
         );
