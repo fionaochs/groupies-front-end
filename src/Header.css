@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
-
 @import url('https://fonts.googleapis.com/css?family=Quicksand|Roboto+Condensed|Roboto+Mono|Spartan&display=swap');
 
 div.header {
+
     background-color: #0F5257;
     height: 75px;
+    text-size-adjust: 50px;
 }
 #header-image{
     height: 50px;
@@ -21,14 +22,12 @@ justify-content: center;
 position: relative;
 align-items: center;
 }
-html, body{
-    width: 100%;
-    height: 100%;
-}
+
 #header-text{
     font-size: 45px;
     font-family: 'Quicksand';
 }
+
 #header{
     position: fixed;
     width: 100%;
@@ -38,12 +37,6 @@ html, body{
     left: 0;
     margin: 0;
     padding: 10px;
-    font-size: 35px;
-    border: solid 2px #0F5257;
-}
-
-body{
-    background-color: white;
 }
 
 .header button{

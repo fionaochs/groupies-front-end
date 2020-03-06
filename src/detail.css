@@ -1,5 +1,99 @@
 @import url('https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet');
 
+/* .detail-box-container {
+    display: flex;
+    flex-flow: column;
+} */
+
+#detail-container {
+    display: flex;
+    justify-content: center;
+}
+
+#detail-left {
+width: 50%;
+}
+
+#detail-right {
+width: 50%;
+}
+
+#detail-left img {
+    width: 75%;
+}
+
+detail-concert-list {
+    
+}
+
+detail-page-image {
+}
+
+.detail-page-right-side {
+    font-size: 16px;
+    width: 50%;
+}
+
+.detail-box-container li {
+    list-style: none;
+
+}
+
+.share-buttons{
+    position: relative;
+    margin-left: 900px;
+    margin-top: -50px;
+    margin-bottom: 20px;
+}
+
+.detail-box-container li h3 {
+    
+}
+
+.detail-ticket-button {
+    color: white;
+    background-color: #0F5257;
+    border-radius: 25px;
+    font-size: 20px;
+    padding: 2px 8px;
+    cursor: pointer;
+
+}
+
+.detail-h1 {
+    color: #0B3142;
+    display: block;
+    text-align: left;
+    margin-left: 5%;
+
+}
+.detail-page-save-button {
+    margin-top: 16px;
+}
+
+#detail-save-button {
+    color: white;
+    background-color: #0F5257;
+    border-radius: 25px;
+    font-size: 20px;
+    padding: 2px 8px;
+    cursor: pointer;
+    margin-left: 3.5%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
 .detail-concert-list {
     background-color: 0F5257;
 }
@@ -64,4 +158,4 @@
     padding: 2px 8px;
     cursor: pointer;
     margin: 0px 0px 20px 0px;
-}
+} */
