@@ -9,13 +9,12 @@ div.header {
 #header-image{
     height: 50px;
     width: 150px;
-    /* margin-bottom: -20px; */
     position: absolute;
     bottom: 0;
     right: 33%;
 }
 .header {
-font-family: 'spartan';  
+font-family: 'Quicksand';  
 color: white;
 display: flex;
 justify-content: center;
@@ -28,7 +27,7 @@ html, body{
 }
 #header-text{
     font-size: 45px;
-    font-family: Quicksand;
+    font-family: 'Quicksand';
 }
 #header{
     position: fixed;
