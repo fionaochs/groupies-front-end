@@ -79,4 +79,5 @@ ul#saved-list {
     background-color: #0F5257;
     border-radius: 25px;
     margin-bottom: 10px;
+    cursor: pointer;
 }
