@@ -3,14 +3,20 @@
     text-align: center;
     background-color: rgba(128, 128, 128, 0.214);
     border: solid 1px grey;
-    
+
 }
 saved-list-container li {
-    text-decoration: none;
+
+}
+.saved-list button{
+    font-size: 20px;
+    color: #0F5257;
+    background-color: white;
+    border-radius: 15%;
 }
 
 .saved-list {
-   
+    list-style: none;
 
 }
 .saved-list h1 {
