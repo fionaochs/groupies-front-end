@@ -5,6 +5,10 @@
     border: solid 1px grey;
     
 }
+
+#saved-list-container:first-child {
+    border-top: none;
+}
 saved-list-container li {
     text-decoration: none;
 }

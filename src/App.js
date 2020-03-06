@@ -12,7 +12,8 @@ import SignUp from './SignUp.js'
 import Saved from './Saved.js'
 import AboutUs from './AboutUs.js'
 import HomePage from './HomePage.js'
-import Header from './Header.js'
+import Header from './Header.js';
+import Footer from './Footer.js';
 
 export default class App extends React.Component {
   state = {
@@ -27,6 +28,8 @@ export default class App extends React.Component {
             <Fragment>
               <Route exact path="/signup" component={SignUp} />
               <Header />
+              <div style={{width: '100%', height: '75px' }} ></div>
+              <Footer />
               <Route exact path="/saved" component={Saved} />
               <Route exact path="/concerts" component={ConcertList} />
               <Route exact path="/concert/:id" component={Detail} />

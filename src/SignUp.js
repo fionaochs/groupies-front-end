@@ -9,24 +9,31 @@ export default class LogIn extends Component {
         username: '',
         password: '',
         email: '',
-        city: ''
+        city: '',
+        loading: false
             
     }
 
     handleSignUp = async (e) => {
         e.preventDefault();
-
-        const signUp = await request.post(`https://vast-ravine-67223.herokuapp.com/api/auth/signup`, {
-
-            display_name: this.state.username,
-            email: this.state.email,
-            password: this.state.password,
-            location: this.state.city
-        })
-        
-        localStorage.setItem('user', JSON.stringify(signUp.body));
-        this.props.history.push('/concerts');
-
+        if(!this.state.loading){
+            this.setState({loading: true})
+            await request
+                .post(`https://vast-ravine-67223.herokuapp.com/api/auth/signup`, {
+                    display_name: this.state.username,
+                    email: this.state.email,
+                    password: this.state.password,
+                    location: this.state.city
+                })
+                .then(signUp => {
+                    localStorage.setItem('user', JSON.stringify(signUp.body));
+                    this.props.history.push('/concerts');
+                })
+                .catch(err => {
+                    alert(err)
+                })
+            this.setState({loading: false})
+        }
     }
 
     render() {
@@ -34,16 +41,16 @@ export default class LogIn extends Component {
         
         return (
             <div className="signup-container">
-                <form className="signup-form">
-                    <input type="text" value={ this.state.username} onChange={(e) => this.setState({ username: e.target.value})} placeholder="Username"/>
+                <form className="signup-form" onSubmit={ this.handleSignUp }>
+                    <input type="text" value={ this.state.username} onChange={(e) => this.setState({ username: e.target.value})} placeholder="Username" required/>
                     <br />
-                    <input type="email" value={ this.state.email} onChange={(e) => this.setState({ email: e.target.value})} placeholder="Email"/>
+                    <input type="email" value={ this.state.email} onChange={(e) => this.setState({ email: e.target.value})} placeholder="Email" required/>
                     <br />
-                    <input type="password" value={ this.state.password} onChange={(e) => this.setState({ password: e.target.value})} placeholder="Password"/>
+                    <input type="password" value={ this.state.password} onChange={(e) => this.setState({ password: e.target.value})} placeholder="Password" required/>
                     <br />
-                    <input type="text" value={ this.state.city} onChange={(e) => this.setState({ city: e.target.value})} placeholder="City"/>
+                    <input type="text" value={ this.state.city} onChange={(e) => this.setState({ city: e.target.value})} placeholder="City" required/>
                     <br />
-                    <button id="signup-button"onClick={ this.handleSignUp }>Sign up</button>  
+                    <button id="signup-button" >Sign up</button>  
                     <br />
                 
                 </form>
