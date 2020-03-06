@@ -1,10 +1,10 @@
 Groupies
     Connecting through concerts
 
-By James Eserjose
-   Hannah Riley
-   Fiona Ochs
-   Logan Scott
+By James Eserjose,
+   Hannah Riley,
+   Fiona Ochs,
+   Logan Scott,
    Owen Prendergast
    
 
