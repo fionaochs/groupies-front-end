@@ -1,9 +1,10 @@
 #saved-list-container {
-    margin: 0 auto;
+    margin: 50px 0px 50px 0px auto;
     text-align: center;
-    background-color: rgba(128, 128, 128, 0.214);
-    border: solid 1px grey;
-
+    background-color: #d2d9dc;
+    border: solid 2px #0F5257;
+    border-radius: 25px;
+    
 }
 saved-list-container li {
 
@@ -15,16 +16,9 @@ saved-list-container li {
     border-radius: 15%;
 }
 
-<<<<<<< HEAD
-.saved-list {
-    list-style: none;
-
-}
-=======
->>>>>>> 54a415ee1c0f7e5daf2d1e22cdd93ea9ad4b5620
 .saved-list h1 {
-    font-family: ;
-    font-size: 15px;
+    font-family: 'Quicksand';
+    font-size: 25px;
     color: #0F5257;
 }
 
@@ -32,13 +26,7 @@ saved-list-container li {
     color: #0F5257;
 }
 
-
-
-
-
-
-
-/* ul#saved-list {
+ul#saved-list {
     padding-left: 0px;
     width: 760px;
     margin: 0 auto;
@@ -46,7 +34,8 @@ saved-list-container li {
 #saved-list-container {
     margin: 0 auto;
     text-align: center;
-    background-color: white;
+    background-color: #d2d9dc;
+    width: 75%;
 }
 
 #saved-list a:active, #saved-list a:visited {
@@ -56,7 +45,7 @@ saved-list-container li {
     position: relative;
     padding: 8px;
     margin: 8px 0;
-    background-color: white;
+    background-color: #d2d9dc;
     text-align: left;
     border: 2px solid #0B3140;
 }
@@ -71,74 +60,23 @@ saved-list-container li {
     top: 0;
     right: 0;
 }
-#saved-list h2 {
-    color: #0F5257;
-    margin: 5px 0 10px 0;
-    font-size: 18px;
-}
-#saved-list h3 {
-    /* color: #0F5257; */
-    /* margin: 5px 0 0 0;
-    font-size: 15px;
-}
-.saved-list button{
-    font-size: 20px;
-    color: #0F5257;
-    background-color: white;
-    border-radius: 15%;
-}
-.saved-list button.saved{
-    font-size: 20px;
-    color: #0F5257;
-}
-#saved-list-container {
-    margin: 0 auto;
-    text-align: center;
-    background-color: white;
-}
-#saved-list a {
+#saved-list-container a {
     text-decoration: none;
     color: #0B3142;
 }
-#saved-list a:active, #saved-list a:visited {
-    color: #0B3142;
-}
-#saved-list li {
-    position: relative;
-    padding: 8px;
-    margin: 8px 0;
-    background-color: white;
-    text-align: left;
-    border: 2px solid #0B3140;
-}
-#saved-list li img {
-    float: left;
-    height: 200px;
-    width: 200px;
-    margin-right: 20px;
-}
-#saved-list li span {
-    position: absolute;
-    top: 0;
-    right: 0;
-}
 #saved-list h2 {
     color: #0F5257;
     margin: 5px 0 10px 0;
-    font-size: 18px;
+    font-size: 25px;
 }
 #saved-list h3 {
-    color: #0F5257;
+    color: #0F5257; 
     margin: 5px 0 0 0;
     font-size: 15px;
 }
-.saved-list button{
-    font-size: 20px;
-    color: #0F5257;
-    background-color: white;
-    border-radius: 15%;
+
+#saved-list-container {
+    margin: 50px auto;
+    text-align: center;
+    background-color: #d2d9dc;
 }
-.saved-list button.saved{
-    font-size: 20px;
-    color: #0F5257;
-} */ 

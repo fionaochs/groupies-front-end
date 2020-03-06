@@ -27,3 +27,6 @@ ul {
   height: 275px;
 }
 
+input:focus, button:focus {
+    outline: none;
+}
