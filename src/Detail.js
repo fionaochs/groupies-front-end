@@ -15,7 +15,8 @@ const isLoggedIn = () => JSON.parse(localStorage.getItem('user'));
 
 
 export default class Detail extends Component {
-    state = { concert: {} }
+    state = { concert: {},
+                saved: [] }
 
     async componentDidMount() {
 
@@ -23,6 +24,17 @@ export default class Detail extends Component {
         console.log(concerts.body);
         if (concerts.body)
         {this.setState({ concert: concerts.body })}
+
+        if (isLoggedIn()) {
+            const data = await getSaved();
+        if(data.body) {
+            this.setState({
+                    saved: data.body,
+                } )
+            } else {
+                this.setState({ saved: [] })
+            }
+        } 
     }
 
     handleSaved = async( saved_id=this.state.concert.id, e) => {
@@ -30,7 +42,7 @@ export default class Detail extends Component {
         if(!this.state.loadingFav){
             this.setState({loadingFav: true})
             const button = e.target;
-            button.classList.add('lds-ellipsis');
+            // button.classList.add('lds-ellipsis');
             console.log(saved_id);
             try {
             const saved = {
@@ -63,7 +75,7 @@ export default class Detail extends Component {
         } catch {
         }
         
-        button.classList.remove('lds-ellipsis');
+        // button.classList.remove('lds-ellipsis');
         this.setState({loadingFav: false})
     }}
     render() {
@@ -85,7 +97,7 @@ export default class Detail extends Component {
                         </div>
                         <div id="detail-right">
                             <a href={this.state.concert.url}><button className="detail-ticket-button">Tickets</button></a>
-                            <button id="detail-save-button" onClick={e => this.handleSaved(null, e)}>Save</button>
+                            <button id="detail-save-button" onClick={e => this.handleSaved(null, e)} disabled={this.state.saved.findIndex(el => el.tm_id === this.state.concert.id) !== -1 ? 'true' : ''} className={this.state.saved.findIndex(el => el.tm_id === this.state.concert.id) !== -1 ? 'saved' : ''}>{this.state.saved.findIndex(el => el.tm_id === this.state.concert.id) !== -1 ? 'Saved!' : 'Save'}</button>
                             <h3 className="detail-type">Date: {moment(this.state.concert.dates.start.localDate, 'YYYY-MM-DD').format('dddd, MMM Do, YYYY')}</h3>
                             <h3 className="location-detail">Location: {this.state.concert._embedded.venues[0].city.name}, {this.state.concert._embedded.venues[0].state.name}</h3>
                             <h3 className="detail-type">Venue: {this.state.concert._embedded.venues[0].name}</h3>

@@ -24,7 +24,7 @@ width: 50%;
     width: 75%;
 }
 
-detail-concert-list {
+detail-detail-container {
     
 }
 
@@ -59,7 +59,7 @@ detail-page-image {
     font-size: 20px;
     padding: 2px 8px;
     cursor: pointer;
-
+    padding: 5px 8px;
 }
 
 .detail-h1 {
@@ -81,6 +81,7 @@ detail-page-image {
     padding: 2px 8px;
     cursor: pointer;
     margin-left: 3.5%;
+    padding: 5px 8px;
     transition: 0s all;
 }
 
@@ -91,13 +92,83 @@ detail-page-image {
 
 
 
+#detail-container button.saved {
+    background: Grey;
+}
 
+#detail-container button.lds-ellipsis {
+    color: white !important;
+}
 
+#detail-container button.lds-ellipsis:hover {
+    color: black;
+    /* transition: 0s all; */
+}
+
+#detail-container button.lds-ellipsis div {
+    display: inline-block;
+}
+
+#detail-container .lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    /* height: 80px; */
+}
+#detail-container .lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #333;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+#detail-container .lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+#detail-container .lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+  #detail-container .lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+#detail-container .lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+}
+@keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+}
+@keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(24px, 0);
+    }
+}
 
 
 
 /* 
-.detail-concert-list {
+.detail-detail-container {
     background-color: 0F5257;
 }
 
