@@ -21,7 +21,7 @@ export default class SignIn extends Component {
             email: this.state.usernameSignIn,
             password: this.state.passwordSignIn,
         })
-        alert('you are now logged in');
+
         localStorage.setItem('user', JSON.stringify(signIn.body));
         this.props.history.push('/concerts');
     } catch  {
