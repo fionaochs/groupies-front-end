@@ -111,6 +111,9 @@ export default class ConcertList extends Component {
         return (
             <div id="concert-list-container">
                 <div id='sidebar'>
+                    <div class='links'>
+                        <a className='savedlink' href="/saved">Saved Concerts</a>
+                    </div>
                     <SearchBar
                     searchQuery={this.state.searchQuery}
                     handleSearch={this.handleSearch}

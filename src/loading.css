@@ -5,9 +5,13 @@
 .concert-list span div:first-child {
     display:inline-block;
 }
+#concert-list-container #sidebar {
+    margin-right: 100px;
+    margin-left: -100px;
+}
 
 .concert-list span {
-    color: #ccc;
+    color: white;
     display: inline-block;
     line-height: 80px;
     cursor: pointer;
@@ -16,6 +20,13 @@
     /* padding: 20px; */
     transition: .2s all;
     font-size: 40px !important;
+    text-align: center;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+.concert-list .list-right {
+    display: inline-block;
 }
 
 .concert-list span.saved {
@@ -27,7 +38,7 @@
 }
 
 .concert-list span:hover {
-    color: red;
+    color: #0F5257;
     /* transition: 0s all; */
 }
 
