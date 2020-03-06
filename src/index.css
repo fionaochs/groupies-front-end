@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet');
 
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Roboto+Condensed|Roboto+Mono|Spartan&display=swap');
 body {
   margin: 0;
-  font-family: 'Spartan', sans-serif;
+  font-family: 'Quicksand';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
