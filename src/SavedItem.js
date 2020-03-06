@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import './Saved.css'
 import {Link} from 'react-router-dom'
+import request from 'superagent'
+// import * as moment from 'moment';
 
 export default class SavedItem extends Component {
+
     render() {
         
         return (
@@ -12,13 +15,11 @@ export default class SavedItem extends Component {
                 <div className="saved-list">
                 <h1>{this.props.concert.name}</h1>
                 <img src={this.props.concert.images} style={{width: "125px", height:"100px"}} alt="" className="concert-images"/>
-
-                <h3>Date: {this.props.concert.start_date}</h3>
-
                 <h3>{this.props.concert.city}, {this.props.concert.state}</h3>
-
                 </div>
                 </a>
+                <button id="remove-from-saves-button" onClick={() => this.props.handleDelete(this.props.concert)}>Remove from saved</button>
+                
             </div>
         )
     }

@@ -5,7 +5,8 @@ export const getSaved = async() => {
     const url = 'https://vast-ravine-67223.herokuapp.com/api/me/saved';
     const token = user ? user.token : '';
     let data = await request.get(url)
-        .set('Authorization', token);
+        .set('Authorization', token)
+        .catch(err => alert(err));
     return data;
 }
 export const addSaved = async(body) => {
@@ -13,7 +14,8 @@ export const addSaved = async(body) => {
     const url = 'https://vast-ravine-67223.herokuapp.com/api/me/saved';
     const token = user ? user.token : '';
     let data = await request.post(url, body)
-        .set('Authorization', token);
+        .set('Authorization', token)
+        .catch(err => alert(err));
     return data;
 }
 export const deleteSaved = async(id) => {
@@ -21,7 +23,8 @@ export const deleteSaved = async(id) => {
     const url = `https://vast-ravine-67223.herokuapp.com/api/me/saved/${id}`;
     const token = user ? user.token : '';
     let data = await request.delete(url)
-        .set('Authorization', token);
+        .set('Authorization', token)
+        .catch(err => alert(err));
     return data;
 }
 
@@ -32,16 +35,20 @@ export const getConcert = (id) => request.get(`https://vast-ravine-67223.herokua
 export const goFromSavedToDetails = (id) => request.get(`https://vast-ravine-67223.herokuapp.com/api/saved/${id}`);
 
 
+export const getConcerts = (keyword = '', city = '') => request
+    .get(`https://vast-ravine-67223.herokuapp.com/api/concerts?city=${city}&keyword=${keyword}`)
+    .catch(err => alert(err));
+
+export const getConcert = (id) => request
+    .get(`https://vast-ravine-67223.herokuapp.com/api/concerts/${id}`)
+    .catch(err => alert(err));;
+
+export const goFromSavedToDetails = (id) => request
+    .get(`https://vast-ravine-67223.herokuapp.com/api/saved/${id}`)
+    .catch(err => alert(err));
 
 
 
 
 
-// export const goFromSavedToDetails = async(id) => {
-//     const user = JSON.parse(localStorage.getItem('user'));
-//     const url = `https://vast-ravine-67223.herokuapp.com/api/me/saved/${id}`;
-//     const token = user ? user.token : '';
-//     let data = await request.delete(url)
-//         .set('Authorization', token);
-//     return data;
-// }
+

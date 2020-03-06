@@ -34,6 +34,7 @@ export default class App extends React.Component {
               <Route exact path="/concerts" component={ConcertList} />
               <Route exact path="/concert/:id" component={Detail} />
               <Route exact path="/about" component={AboutUs} />
+              <div style={{width: '100%', height: '75px' }} ></div>
             </Fragment>
           </Switch>
         </div>

@@ -20,18 +20,27 @@ export default class ConcertList extends Component {
         // userNotLoggedIn: false 
         loadingFav: false,
         loadingSearch: false,
-        
+        user: isLoggedIn()
     }
     async componentDidMount() {
-            const data = await getConcerts();
-            if(data.body._embedded) {
+        let concertData;
+        if (this.state.user) {
+            concertData = await getConcerts('', this.state.user.city_name);
+            if(this.state.searchCity === '') {
+                this.setState({searchCity: this.state.user.city_name})
+            }
+        } else {
+            concertData = await getConcerts('', );
+        }
+            if(concertData.body._embedded) {
                 this.setState({
-                        concerts: JSON.parse(data.text)._embedded.events,
+                        concerts: JSON.parse(concertData.text)._embedded.events,
                     })
                 } else {
                     this.setState({ concerts: [] })
                 }
-            if (isLoggedIn()) {
+            if (this.state.user) {
+                this.setState({searchCity: this.state.user.city_name})
                 const data = await getSaved();
             if(data.body) {
                 this.setState({
@@ -48,7 +57,7 @@ export default class ConcertList extends Component {
     handleSearch = async (e) => {
         e.preventDefault();
         const data = await getConcerts(this.state.searchQuery, this.state.searchCity);
-        console.log(data);
+        // console.log(data);
         if(data.body._embedded) {
         this.setState({
                 concerts: JSON.parse(data.text)._embedded.events,
@@ -61,6 +70,11 @@ export default class ConcertList extends Component {
     handleChange = (e) => this.setState({ searchQuery: e.target.value })
 
     handleCity = (e) => this.setState({ searchCity: e.target.value })
+
+    handleLogout = (e) => {
+        localStorage.clear();
+        this.props.history.push('/');
+    }
 
     handleSaved = async(concert, saved_id, e) => {
         
@@ -113,8 +127,9 @@ export default class ConcertList extends Component {
         return (
             <div id="concert-list-container">
                 <div id='sidebar'>
-                    <div class='links'>
-                        <a className='savedlink' href="/saved">Saved Concerts</a>
+                    <div className='links'>
+                        <a className='savedlink linkbutton' href="/saved">Saved Concerts</a>
+                        <button className='logoutlink linkbutton' onClick={this.handleLogout}>Logout</button>
                     </div>
                     <SearchBar
                     searchQuery={this.state.searchQuery}
