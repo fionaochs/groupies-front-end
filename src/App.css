@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
 
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Roboto+Condensed|Roboto+Mono|Spartan&display=swap');
 html, body, #root {
   width: 100%;
   height: 100%;
@@ -10,7 +11,7 @@ html, body, #root {
 
 body {
   background-color: white;
-  font-family: 'spartan';  
+  font-family: 'Quicksand';  
   text-align: center;
 }
 #app-div{
