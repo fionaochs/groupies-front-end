@@ -2,20 +2,31 @@
     background-color: white;
     border-radius: 25px;
     border-color: black;
+    top: 10px;
     padding: 8px 8px 8px 8px;
     border: 15px;
     text-decoration: none;
     color: white;
     font: white;
-    margin: 5px 10px 10px 10px;
+
+    /* margin: 5px 10px 10px 10px; */
 }
+
 #footer-link:hover {
     cursor: pointer;
     text-decoration: underline;
     color: #0B3142;
-}
-#footer-id {
-    margin-top: 35px;
-    text-decoration: none;
     
+}
+
+#footer-id {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    text-decoration: none;
+    background-color: #0F5257;
+    width: 100%;
+    height: 4.5rem
 }
