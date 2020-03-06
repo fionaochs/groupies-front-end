@@ -7,7 +7,7 @@ export default class ConcertData extends Component {
 
         concertdate = moment(concertdate, 'YYYY-MM-DD').format('dddd, MMM Do, YYYY');
         
-        console.log(this.props.saved)
+        // console.log(this.props.saved)
         return (
             <li className="concert-list">
                 <Link  to={`concert/${this.props.concert.id}`} key={this.props.concert.id}>

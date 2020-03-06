@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { SimpleShareButtons } from "react-simple-share";
 import {
   EmailShareButton,
   FacebookShareButton,
