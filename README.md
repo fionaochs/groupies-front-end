@@ -1,6 +1,9 @@
 Groupies
     Connecting through concerts
-
+    
+Deployed on Heroku at 
+ https://fierce-taiga-25449.herokuapp.com/
+ 
 By James Eserjose,
    Hannah Riley,
    Fiona Ochs,
