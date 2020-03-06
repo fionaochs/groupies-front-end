@@ -27,6 +27,7 @@
 
 .concert-list .list-right {
     display: inline-block;
+    width: 80%;
 }
 
 .concert-list span.saved {

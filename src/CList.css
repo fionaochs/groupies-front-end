@@ -103,6 +103,30 @@ ul#concert-list {
 #concert-list-container .savedlink:hover {
     font-weight: 700;
 }
+.linkbutton {
+    display: block;
+}
+
+#concert-list-container .logoutlink {
+    color: white;
+    background-color: #0F5257;
+    border-radius: 25px;
+    font-size: 16px;
+    padding: 6px 14px;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: Quicksand, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    transition: .2s all;
+    margin-top: 20px;
+    border:none;
+    margin: 20px auto 0 auto;
+}
+#concert-list-container .logoutlink:hover {
+    font-weight: 700;
+}
+
+.link
 #concert-list li span {
     position: absolute;
     top: 0;

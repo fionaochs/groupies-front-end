@@ -9,11 +9,13 @@ export default class SearchBar extends Component {
                         placeholder="Search"
                         value={this.props.searchQuery}
                         onChange={this.props.handleChange}
+                        onFocus={e => e.target.select()} 
                     /><br />
                     <input
                         placeholder="City"
                         value={this.props.searchCity}
                         onChange={this.props.handleCity}
+                        onFocus={e => e.target.select()} 
                     /><br />
                     <button id="search-bar-button">Search</button>
                     
