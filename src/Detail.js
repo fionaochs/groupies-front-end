@@ -109,7 +109,7 @@ export default class Detail extends Component {
                             googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDkXY-WjEgFiZ9rf4y32GmUpgSwUwNtMkE`} 
                             loadingElement={<div style={{ height: '50%' }} />}
                             containerElement={<div style={{ height: '40px', margin: '0 auto', textAlign: 'center'}} />}
-                            mapElement={<div style={{width:'650px', height:'300px', textAlign: 'center', margin: '0 auto'}} />}
+                            mapElement={<div style={{width:'550px', height:'300px', textAlign: 'center', margin: '0 auto'}} />}
                             lng={Number(this.state.concert._embedded.venues[0].location.longitude)}
                             lat={Number(this.state.concert._embedded.venues[0].location.latitude)} />
                             }
