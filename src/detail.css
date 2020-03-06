@@ -67,7 +67,7 @@ detail-page-image {
     color: #0B3142;
     display: block;
     text-align: left;
-    margin-left: 5%;
+    margin-left: 7%;
 
 }
 .detail-page-save-button {
@@ -83,6 +83,7 @@ detail-page-image {
     cursor: pointer;
     margin-left: 3.5%;
     padding: 5px 8px;
+    transition: 0s all;
 }
 
 
