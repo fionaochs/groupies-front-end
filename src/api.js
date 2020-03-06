@@ -35,17 +35,7 @@ export const getConcert = (id) => request.get(`https://vast-ravine-67223.herokua
 export const goFromSavedToDetails = (id) => request.get(`https://vast-ravine-67223.herokuapp.com/api/saved/${id}`);
 
 
-export const getConcerts = (keyword = '', city = '') => request
-    .get(`https://vast-ravine-67223.herokuapp.com/api/concerts?city=${city}&keyword=${keyword}`)
-    .catch(err => alert(err));
 
-export const getConcert = (id) => request
-    .get(`https://vast-ravine-67223.herokuapp.com/api/concerts/${id}`)
-    .catch(err => alert(err));;
-
-export const goFromSavedToDetails = (id) => request
-    .get(`https://vast-ravine-67223.herokuapp.com/api/saved/${id}`)
-    .catch(err => alert(err));
 
 
 
