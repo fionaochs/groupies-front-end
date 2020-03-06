@@ -2,6 +2,7 @@ ul#concert-list {
     padding-left: 0px;
     width: 760px;
     margin: 0 auto;
+    margin-left: 20px;
 }
 #concert-list-container {
     margin: 0 auto;
@@ -58,6 +59,9 @@ ul#concert-list {
     margin: 0 auto;
     text-align: center;
     background-color: white;
+    display: flex;
+    justify-content: center;
+    width: 860px;
 }
 #concert-list a {
     text-decoration: none;

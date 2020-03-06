@@ -110,7 +110,7 @@ export default class ConcertList extends Component {
 
         return (
             <div id="concert-list-container">
-                <header>
+                <div id='sidebar'>
                     <SearchBar
                     searchQuery={this.state.searchQuery}
                     handleSearch={this.handleSearch}
@@ -118,17 +118,15 @@ export default class ConcertList extends Component {
                     handleCity={this.handleCity}
                     searchCity={this.state.searchCity}
                     />
-                </header>
+                </div>
                 {/* {this.state.userNotLoggedIn && <SignUpModal />} */}
-                { this.state.concerts.length &&
                 <ul id='concert-list'>
-                    {
+                { this.state.concerts &&
                         this.state.concerts.map(concert =>
-                        <ConcertData saved={ this.state.saved } key={concert.tm_id} handleSaved={ this.handleSaved } concert={concert} />
+                        <ConcertData saved={ this.state.saved } key={concert.id} handleSaved={ this.handleSaved } concert={concert} />
                         )
-                    }
-                </ul>
                 }
+                </ul>
             </div>
         )
 }};

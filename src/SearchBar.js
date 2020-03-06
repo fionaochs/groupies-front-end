@@ -6,13 +6,15 @@ export default class SearchBar extends Component {
             <div id="search-bar-container">
                 <form onSubmit={this.props.handleSearch}>
                     <input
-                    placeholder="Search"
-                    value={this.props.searchQuery}
-                    onChange={this.props.handleChange}/>
+                        placeholder="Search"
+                        value={this.props.searchQuery}
+                        onChange={this.props.handleChange}
+                    /><br />
                     <input
-                    placeholder="City"
-                    value={this.props.searchCity}
-                    onChange={this.props.handleCity}/>
+                        placeholder="City"
+                        value={this.props.searchCity}
+                        onChange={this.props.handleCity}
+                    /><br />
                     <button id="search-bar-button">Search</button>
                     
                 </form>
