@@ -4,7 +4,7 @@ import SearchBar from './SearchBar.js';
 import { getConcerts, getSaved, addSaved, deleteSaved } from './api.js';
 // import { SignUpModal } from './SignUpModal.js' 
 import './loading.css';
-import './ConcertList.css';
+import './CList.css';
 import Header from './Header.js'
 
 const isLoggedIn = () => JSON.parse(localStorage.getItem('user')); 
@@ -61,15 +61,15 @@ export default class ConcertList extends Component {
     handleCity = (e) => this.setState({ searchCity: e.target.value })
 
     handleSaved = async(concert, saved_id, e) => {
-        console.log('||||||||||', 'clicked')
+        
         if(!this.state.loadingFav){
-            console.log('||||||||||', 'HIHIHIH', isLoggedIn())
+    
             this.setState({loadingFav: true})
             const button = e.target;
             button.classList.add('lds-ellipsis');
             console.log(saved_id);
             // try {
-                console.log('|||||', concert)
+            
             const saved = {
                 tm_id: concert.id,
                 name: concert.name,
@@ -85,7 +85,7 @@ export default class ConcertList extends Component {
                 lat: concert._embedded.venues[0].location.latitude ? concert._embedded.venues[0].location.latitude : null,
             }
             if (isLoggedIn()) {
-console.log('||||||||||', isLoggedIn())
+
                 const savedConcert = saved_id === -1 
                     ? await addSaved(saved)
                     : await deleteSaved(this.state.saved[saved_id].id);
