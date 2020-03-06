@@ -1,8 +1,8 @@
 ul#concert-list {
     padding-left: 0px;
-    width: 760px;
-    margin: 0 auto;
-    margin-left: 20px;
+    min-width: 760px;
+    /* margin: 0 auto; */
+    /* margin-left: 20px; */
 }
 #concert-list-container {
     margin: 0 auto;
@@ -61,7 +61,9 @@ ul#concert-list {
     background-color: white;
     display: flex;
     justify-content: center;
-    width: 860px;
+}
+#concert-list-container .links {
+    margin: 30px 0;
 }
 #concert-list a {
     text-decoration: none;
@@ -74,15 +76,31 @@ ul#concert-list {
     position: relative;
     padding: 8px;
     margin: 8px 0;
-    background-color: white;
+    background-color: #d2d9dc;
     text-align: left;
     border: 2px solid #0B3140;
+    border-radius: 15px;
 }
 #concert-list li img {
     float: left;
     height: 200px;
     width: 200px;
     margin-right: 20px;
+}
+#concert-list-container .savedlink {
+    color: white;
+    background-color: #0F5257;
+    border-radius: 25px;
+    font-size: 16px;
+    padding: 6px 14px;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: Quicksand, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    transition: .2s all;
+}
+#concert-list-container .savedlink:hover {
+    font-weight: 700;
 }
 #concert-list li span {
     position: absolute;
