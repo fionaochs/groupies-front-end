@@ -17,8 +17,7 @@ export default class ConcertList extends Component {
         saved: [],
         // userNotLoggedIn: false 
         loadingFav: false,
-        loadingSearch: false,
-        
+        loadingSearch: false
     }
     async componentDidMount() {
             const data = await getConcerts();
