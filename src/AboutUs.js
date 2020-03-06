@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import './AboutUs.css';
 import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
-import Footer from './Footer.js'
+// import Footer from './Footer.js'
+import './AboutUs.css';
 // import Footer from './Footer';
 
 export default class AboutUs extends Component {
@@ -62,7 +62,6 @@ export default class AboutUs extends Component {
                     {/* <Link id='concert-link' to="/concerts">Back to concerts</Link> */}
                     </div>
                 </div>
-                    <Footer />
             </div>
         )
     }

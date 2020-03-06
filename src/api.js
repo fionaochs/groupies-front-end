@@ -25,6 +25,18 @@ export const deleteSaved = async(id) => {
     return data;
 }
 
+export const getConcerts = (keyword = '', city = '') => request.get(`https://vast-ravine-67223.herokuapp.com/api/concerts?city=${city}&keyword=${keyword}`);
+
+export const getConcert = (id) => request.get(`https://vast-ravine-67223.herokuapp.com/api/concerts/${id}`);
+
+export const goFromSavedToDetails = (id) => request.get(`https://vast-ravine-67223.herokuapp.com/api/saved/${id}`);
+
+
+
+
+
+
+
 // export const goFromSavedToDetails = async(id) => {
 //     const user = JSON.parse(localStorage.getItem('user'));
 //     const url = `https://vast-ravine-67223.herokuapp.com/api/me/saved/${id}`;
@@ -33,9 +45,3 @@ export const deleteSaved = async(id) => {
 //         .set('Authorization', token);
 //     return data;
 // }
-
-export const getConcerts = (keyword = '', city = '') => request.get(`https://vast-ravine-67223.herokuapp.com/api/concerts?city=${city}&keyword=${keyword}`);
-
-export const getConcert = (id) => request.get(`https://vast-ravine-67223.herokuapp.com/api/concerts/${id}`);
-
-export const goFromSavedToDetails = (id) => request.get(`https://vast-ravine-67223.herokuapp.com/api/saved/${id}`);

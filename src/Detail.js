@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
-import { getConcert } from './api'
-import './detail.css';
-import * as moment from 'moment';
-import Share from './Share';
-import { getSaved, addSaved, deleteSaved } from './api.js';
-
-import Mapp from './Map.js'
 import Header from './Header.js'
+import Share from './Share';
+import Mapp from './Map.js'
+import * as moment from 'moment';
 import { FaAutoprefixer } from 'react-icons/fa';
-import Footer from './Footer.js'
+import { getSaved,
+         addSaved,
+         deleteSaved,
+         getConcert } from './api.js';
+import './detail.css';
+
 
 const isLoggedIn = () => JSON.parse(localStorage.getItem('user')); 
 
@@ -90,7 +91,6 @@ export default class Detail extends Component {
                             <h3 className="location-detail">Location: {this.state.concert._embedded.venues[0].city.name}, {this.state.concert._embedded.venues[0].state.name}</h3>
                             <h3 className="detail-type">Venue: {this.state.concert._embedded.venues[0].name}</h3>
 
-
                             { this.state.concert._embedded &&
                             <Mapp
                             isMarkerShown
@@ -103,10 +103,8 @@ export default class Detail extends Component {
                             }
                         </div>
                     </div>
-            </li>
-            
-        }
-        <Footer />
+                </li>  
+            }
         </div>
         );
     }

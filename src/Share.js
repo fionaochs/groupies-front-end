@@ -11,6 +11,8 @@ import {
   RedditIcon,
   TwitterIcon
 } from "react-share";
+
+
 export default class Share extends Component {
   render() {
     return (
