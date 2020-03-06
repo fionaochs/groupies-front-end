@@ -74,3 +74,9 @@ ul#saved-list {
     text-align: center;
     background-color: #d2d9dc;
 }
+#remove-from-saves-button {
+    color: white;
+    background-color: #0F5257;
+    border-radius: 25px;
+    margin-bottom: 10px;
+}
