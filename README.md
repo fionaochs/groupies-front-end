@@ -1,6 +1,4 @@
 Groupies
-
-
     Connecting through concerts
 
 By James Eserjose,
