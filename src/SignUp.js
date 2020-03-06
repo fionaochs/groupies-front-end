@@ -23,7 +23,7 @@ export default class LogIn extends Component {
             password: this.state.password,
             location: this.state.city
         })
-        alert('thanks for signing up!');
+        
         localStorage.setItem('user', JSON.stringify(signUp.body));
         this.props.history.push('/concerts');
 
