@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import request from 'superagent'
 import { getSaved, addSaved, deleteSaved } from './api.js'
 import SavedItem from './SavedItem'
+import Footer from './Footer'
 
 export default class Saved extends Component {
     state = {
@@ -24,6 +25,8 @@ export default class Saved extends Component {
         return (
             <div> {
                 this.state.saved.map(concert => <SavedItem concert={ concert } key={ concert.id } />)}
+            
+            <Footer />
             </div>
                 )
         }

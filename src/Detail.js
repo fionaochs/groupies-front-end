@@ -4,10 +4,11 @@ import './detail.css';
 import * as moment from 'moment';
 import Share from './Share';
 import { getSaved, addSaved, deleteSaved } from './api.js';
-// import * as moment from 'moment';
+
 import Mapp from './Map.js'
 import Header from './Header.js'
 import { FaAutoprefixer } from 'react-icons/fa';
+import Footer from './Footer.js'
 
 const isLoggedIn = () => JSON.parse(localStorage.getItem('user')); 
 
@@ -104,7 +105,8 @@ export default class Detail extends Component {
                     </div>
             </li>
             
-            }
+        }
+        <Footer />
         </div>
         );
     }
