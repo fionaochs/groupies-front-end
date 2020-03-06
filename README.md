@@ -1,3 +1,23 @@
+Groupies
+    Connecting through concerts
+
+By James Eserjose,
+   Hannah Riley,
+   Fiona Ochs,
+   Logan Scott,
+   Owen Prendergast
+   
+
+
+Groupies Back-End Repo
+https://github.com/fionaochs/groupies-back
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
