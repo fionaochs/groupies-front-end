@@ -15,10 +15,13 @@ saved-list-container li {
     border-radius: 15%;
 }
 
+<<<<<<< HEAD
 .saved-list {
     list-style: none;
 
 }
+=======
+>>>>>>> 54a415ee1c0f7e5daf2d1e22cdd93ea9ad4b5620
 .saved-list h1 {
     font-family: ;
     font-size: 15px;
