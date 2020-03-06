@@ -14,7 +14,7 @@ export default class AboutUs extends Component {
                     {/* <h1>The Groupies</h1> */}
                     <ul className="groupies-card">
                         <li className='groupies-au-li'>
-                                <img src="/burningman.jpg" alt="card background"  className="card-img"></img>
+                                <img src="https://i.imgur.com/sVBXISQ.jpg" alt="card background"  className="card-img"></img>
                                 <img className="member-photo" src="https://media-exp1.licdn.com/dms/image/C5603AQGuTnFZSlQTDg/profile-displayphoto-shrink_200_200/0?e=1588809600&v=beta&t=wVw2waRURUwVMkWgV8GIph1_tOW8m23Fsoh7wOhgK8s" alt=""></img>
                             <h2 className='our-names'>Fiona Ochs</h2>
                                 <div className='our-links'>
@@ -23,7 +23,7 @@ export default class AboutUs extends Component {
                                 </div>
                         </li>
                         <li className='groupies-au-li'>
-                                <img src="https://images.assetsdelivery.com/compings_v2/Hbak/Hbak1403/Hbak140300001.jpg" alt="card background" className="card-img"></img>
+                                <img src="https://i.imgur.com/NLiBfrW.jpg" alt="card background" className="card-img"></img>
                                 <img className="member-photo"  src="https://media-exp1.licdn.com/dms/image/C5603AQHcT7B0DKuFSw/profile-displayphoto-shrink_200_200/0?e=1588809600&v=beta&t=1W4a_TKG8xcr7wFIcFelSYo4bVZzQ4VyclVHNq_d4po" alt=""></img>
                             <h2 className='our-names'>Hannah Riley</h2>
                                 <div className='our-links'>
@@ -41,7 +41,7 @@ export default class AboutUs extends Component {
                                 </div>
                         </li>
                         <li className='groupies-au-li'>
-                                <img src="https://ca-times.brightspotcdn.com/dims4/default/1f43886/2147483647/strip/true/crop/2048x1365+0+0/resize/840x560!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fee%2Fd5%2Fcf587889aaefd9783a3a55b61904%2Fla-la-et-led-02-jpg-20140613" alt="card background" className="card-img"></img>
+                                <img src="https://i.imgur.com/VisAFzG.jpg" alt="card background" className="card-img"></img>
                                 <img className="owen-member-photo" src="https://media-exp1.licdn.com/dms/image/C5603AQFvsrhqG1QcOw/profile-displayphoto-shrink_200_200/0?e=1588809600&v=beta&t=H3FhlHeke0mS-7Qcr2ldCbKwatOBHdqbWi7-xXOb-p8" alt=""></img>
                             <h2 className='our-names'>Owen Prendergast</h2>
                                 <div className='our-links'>
@@ -50,7 +50,7 @@ export default class AboutUs extends Component {
                                 </div>
                         </li>
                         <li className='groupies-au-li'>
-                                <img src="/queen.png" alt="card background" className="card-img"></img>
+                                <img src="https://i.imgur.com/cy4zZMq.png" alt="card background" className="card-img"></img>
                                 <img className="member-photo" src="https://media-exp1.licdn.com/dms/image/C4E03AQFDbslqaS_lag/profile-displayphoto-shrink_200_200/0?e=1588809600&v=beta&t=LXKYIGGuym-k5aSQ7nu9GRNhaOgjHck31YLvQ3mhnaM" alt=""></img>
                             <h2 className='our-names'>James Eserjose</h2>
                                 <div className='our-links'>
