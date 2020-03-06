@@ -20,6 +20,9 @@
 }
 
 #footer-id {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     bottom: 0;
     text-decoration: none;
