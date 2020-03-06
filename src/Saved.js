@@ -25,8 +25,7 @@ export default class Saved extends Component {
         return (
             <div> {
                 this.state.saved.map(concert => <SavedItem concert={ concert } key={ concert.id } />)}
-            
-            <Footer />
+        
             </div>
                 )
         }

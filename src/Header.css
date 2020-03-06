@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand|Roboto+Condensed|Roboto+Mono|Spartan&display=swap');
 
 div.header {
-
     background-color: #0F5257;
     height: 75px;
     text-size-adjust: 50px;
@@ -10,18 +9,31 @@ div.header {
 #header-image{
     height: 50px;
     width: 150px;
-    position: absolute;
+    position: absolute; 
     bottom: 0;
-    right: 33%;
+    right: 12px;
+    /* right: 33%; */
 }
 .header {
 font-family: 'Quicksand';  
 color: white;
 display: flex;
 justify-content: center;
-position: relative;
+position: fixed;
+top:0;
 align-items: center;
+width: 100%;
+z-index: 100;
 }
+
+.header-content {
+    width: 550px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+}
+
 
 #header-text{
     font-size: 45px;

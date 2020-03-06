@@ -39,17 +39,24 @@
 .signin-container button:hover{
     cursor: pointer;
 }
-h1{
+.signin-container h1{
     font-size: 45px;
     margin-right: 10px;
     color: white;
     font-family: 'spartan';  
 
 }
-h2{
+.signin-container h2{
     margin-right: 10px;
     color: white;
     font-family: 'spartan';  
 
+}
+.signin-form input:invalid {
+    border-color: red;
+  }
 
+.signin-form input:focus {
+    outline: none;
+    box-shadow: 0 0 3pt 2pt #0B3140;
 }

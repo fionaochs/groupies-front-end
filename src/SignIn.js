@@ -9,25 +9,29 @@ export default class SignIn extends Component {
     state = {
         usernameSignIn: '',
         passwordSignIn: '',
-        isSignUp: false
+        isSignUp: false,
+        loading: false
         
     }
 
     handleSignIn = async (e) => {
-        try {
         e.preventDefault();
-        
-        const signIn = await request.post(`https://vast-ravine-67223.herokuapp.com/api/auth/signin`, {
-            email: this.state.usernameSignIn,
-            password: this.state.passwordSignIn,
-        })
-
-        localStorage.setItem('user', JSON.stringify(signIn.body));
-        this.props.history.push('/concerts');
-    } catch  {
-        alert('You need to create a user account')
-
-    }
+        if(!this.state.loading){
+            this.setState({loading: true})
+            await request
+                .post(`https://vast-ravine-67223.herokuapp.com/api/auth/signin`, {
+                email: this.state.usernameSignIn,
+                password: this.state.passwordSignIn,
+                })
+                .then(signIn => {
+                    localStorage.setItem('user', JSON.stringify(signIn.body));
+                    this.props.history.push('/concerts');
+                })
+                .catch(err => {
+                    alert(err)
+                })
+            this.setState({loading: false})
+        }
     }
 
 
@@ -35,9 +39,9 @@ export default class SignIn extends Component {
         return (    
             <div className="signin-container">
                 <form className="signin-form" onSubmit={this.handleSignIn}>
-                    <input type="text" value={ this.state.usernameSignIn} onChange={(e) => this.setState({ usernameSignIn: e.target.value})} placeholder="Email"/>
+                    <input type="text" value={ this.state.usernameSignIn} onChange={(e) => this.setState({ usernameSignIn: e.target.value})} placeholder="Email" required/>
                     <br/>
-                    <input type="password" value={ this.state.passwordSignIn} onChange={(e) => this.setState({ passwordSignIn: e.target.value})} placeholder="Password"/>
+                    <input type="password" value={ this.state.passwordSignIn} onChange={(e) => this.setState({ passwordSignIn: e.target.value})} placeholder="Password" required/>
                 
                     <br/>   
                     <button type="submit">Sign In</button> 

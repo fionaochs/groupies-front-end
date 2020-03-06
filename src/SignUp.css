@@ -18,6 +18,15 @@
     align-items: center;
 }
 
+.signup-form input:invalid {
+    border-color: red;
+  }
+
+.signup-form input:focus {
+    outline: none;
+    box-shadow: 0 0 3pt 2pt #0B3140;
+}
+
 .signup-form {
     align-items: center;
     margin-top: -100px;
