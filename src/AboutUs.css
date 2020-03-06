@@ -4,7 +4,8 @@
     background-color: white;
 } */
 .our-names{
-    color: white;
+    color: #0F5257;
+    
     font-family: 'Spartan', sans-serif;
 }
 
@@ -34,10 +35,10 @@
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    height: 380px;
+    height: 370px;
     width: 235px;
     min-width: 200px;
-    border: 4px solid #D6D3F0 ;
+    border: 4px solid #C6B9CD ;
     border-radius: 10px;
     background-color: white; 
     margin-top: 0px;
@@ -45,8 +46,6 @@
     margin-bottom: 20px;
     margin-left: 0px; 
     padding: 10px; 
-    /* text-color: white; */
-    background-color: #0F5257;
 } 
 .groupies-card {
     margin-top: 100px;
@@ -62,12 +61,11 @@
     margin-right: 10px;
     margin-left: 10px;
     font-size: 24px;
-    color: #D6D3F0;
-    
+    color: #0F5257;
     
 }
 #about-us-container {
-    /* background-color: #0F5257; */
+    background-color: #0F5257;
     height: 100%;
     display: flex;
     justify-content: center;
