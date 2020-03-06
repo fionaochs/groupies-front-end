@@ -6,7 +6,7 @@ import ConcertData from './ConcertData.js'
 
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
-        defaultZoom={8}
+        defaultZoom={12.5}
         defaultCenter={{ lat: props.lat, lng: props.lng }}
     >
         {props.isMarkerShown && <Marker position={{ lat: props.lat, lng: props.lng }} />}

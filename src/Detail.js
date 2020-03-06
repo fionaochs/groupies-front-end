@@ -89,6 +89,7 @@ export default class Detail extends Component {
                 </div>
                 
             </li>
+            
             }
         { this.state.concert._embedded &&
         
