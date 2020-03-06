@@ -81,6 +81,7 @@ detail-page-image {
     padding: 2px 8px;
     cursor: pointer;
     margin-left: 3.5%;
+    transition: 0s all;
 }
 
 

@@ -22,6 +22,7 @@ export default class Saved extends Component {
         this.setState({saved: this.state.saved })
     }
     render() {
+
         return (
             <div> {
                 this.state.saved.map(concert => <SavedItem concert={ concert } key={ concert.id } />)}
