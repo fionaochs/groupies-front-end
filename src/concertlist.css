@@ -70,10 +70,13 @@ ul#concert-list {
     position: relative;
     padding: 8px;
     margin: 8px 0;
-    background-color: white;
+    background-color: rgb(240, 240, 240);
     text-align: left;
     border: 2px solid #0B3140;
+    font-family: 'Quicksand'; 
+    /* font-size: 5px; */
 }
+
 #concert-list li img {
     float: left;
     height: 200px;
