@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import './AboutUs.css';
 import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
+import Footer from './Footer.js'
 // import Footer from './Footer';
 
 export default class AboutUs extends Component {
@@ -10,7 +11,7 @@ export default class AboutUs extends Component {
             <div id="about-us-container">
                 <div>
                     <div className="aboutus">
-                    <h1>The Groupies</h1>
+                    {/* <h1>The Groupies</h1> */}
                     <ul className="groupies-card">
                         <li className='groupies-au-li'>
                                 <img src="/burningman.jpg" alt="card background"  className="card-img"></img>
@@ -49,7 +50,7 @@ export default class AboutUs extends Component {
                                 </div>
                         </li>
                         <li className='groupies-au-li'>
-                                <img src="http://images.gofreedownload.net/3/music-party-backgrounds-with-people-silhouettes-vectors-80659.jpg" alt="card background" className="card-img"></img>
+                                <img src="/queen.png" alt="card background" className="card-img"></img>
                                 <img className="member-photo" src="https://media-exp1.licdn.com/dms/image/C4E03AQFDbslqaS_lag/profile-displayphoto-shrink_200_200/0?e=1588809600&v=beta&t=LXKYIGGuym-k5aSQ7nu9GRNhaOgjHck31YLvQ3mhnaM" alt=""></img>
                             <h2 className='our-names'>James Eserjose</h2>
                                 <div className='our-links'>
@@ -58,10 +59,10 @@ export default class AboutUs extends Component {
                                 </div>
                         </li>
                     </ul>
-                    <Link id='concert-link' to="/concerts">Back to concerts</Link>
-                    {/* <Footer /> */}
+                    {/* <Link id='concert-link' to="/concerts">Back to concerts</Link> */}
                     </div>
                 </div>
+                    <Footer />
             </div>
         )
     }

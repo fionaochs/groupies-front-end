@@ -64,6 +64,7 @@
 }
 #about-us-container {
     background-color: #0F5257;
+    height: 100%;
     display: flex;
     justify-content: center;
 }
