@@ -7,7 +7,13 @@
     
 }
 saved-list-container li {
-    text-decoration: none;
+
+}
+.saved-list button{
+    font-size: 20px;
+    color: #0F5257;
+    background-color: white;
+    border-radius: 15%;
 }
 
 .saved-list h1 {

@@ -6,6 +6,7 @@ import { getConcerts, getSaved, addSaved, deleteSaved } from './api.js';
 import './loading.css';
 import './CList.css';
 import Header from './Header.js'
+import Saved from './SavedList.js/index.js.js.js'
 
 const isLoggedIn = () => JSON.parse(localStorage.getItem('user')); 
 
